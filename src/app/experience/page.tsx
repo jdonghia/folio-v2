@@ -36,7 +36,7 @@ export default function Home() {
   });
 
   return (
-    <div
+    <motion.div
       initial={{ transition: { duration: 2 }, opacity: 0 }}
       exit={{ transition: { duration: 5 }, opacity: 0 }}
       animate={{ transition: { duration: 2 }, opacity: 1 }}
@@ -62,6 +62,6 @@ export default function Home() {
           design.{" "}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
