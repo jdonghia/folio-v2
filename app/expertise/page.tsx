@@ -1,50 +1,46 @@
 "use client";
 
-import { motion } from "motion/react";
+import { RouteContainer } from "@/app/components/shared/route-container";
 
-export default function Home() {
+export default function Expertise() {
   return (
-    <motion.div
-      className="overflow-scroll w-full"
-      initial={{ transition: { duration: 0.4, ease: "easeInOut" }, opacity: 0 }}
-      animate={{ transition: { duration: 0.4, ease: "easeInOut" }, opacity: 1 }}
-    >
-      <div className="flex flex-col w-5/6 mt-20 mb-10 ml-auto">
-        <p className="text-7xl  uppercase font-medium">Javascript</p>
+    <RouteContainer>
+      <div className="mb-10 ml-auto mt-20 flex w-5/6 flex-col">
+        <p className="text-7xl  font-medium uppercase">Javascript</p>
       </div>
-      <div className="flex flex-col w-5/6 mb-10 ml-auto">
-        <p className="text-7xl  uppercase font-medium">Typescript</p>
+      <div className="mb-10 ml-auto flex w-5/6 flex-col">
+        <p className="text-7xl  font-medium uppercase">Typescript</p>
       </div>
-      <div className="flex flex-col w-5/6 mb-10 ml-auto">
-        <p className="text-7xl  uppercase font-medium">Frameworks</p>
-        <div className="uppercase self-start flex gap-3 text-2xl items-center">
+      <div className="mb-10 ml-auto flex w-5/6 flex-col">
+        <p className="text-7xl  font-medium uppercase">Frameworks</p>
+        <div className="flex items-center gap-3 self-start text-2xl uppercase">
           Next.js | React.js | Node.js
         </div>
       </div>
-      <div className="flex flex-col w-5/6 mb-10 ml-auto">
-        <p className="text-7xl  uppercase font-medium">CSS Tools</p>
-        <div className="uppercase self-start flex gap-3 text-2xl items-center">
+      <div className="mb-10 ml-auto flex w-5/6 flex-col">
+        <p className="text-7xl  font-medium uppercase">CSS Tools</p>
+        <div className="flex items-center gap-3 self-start text-2xl uppercase">
           Tailwind | shadcn/ui
         </div>
       </div>
-      <div className="flex flex-col w-5/6 mb-10 ml-auto">
-        <p className="text-7xl  uppercase font-medium">Frameworks</p>
-        <div className="uppercase self-start flex gap-3 text-2xl items-center">
+      <div className="mb-10 ml-auto flex w-5/6 flex-col">
+        <p className="text-7xl  font-medium uppercase">Frameworks</p>
+        <div className="flex items-center gap-3 self-start text-2xl uppercase">
           Three.js | Framer Motion
         </div>
       </div>
-      <div className="flex flex-col w-5/6 mb-10 ml-auto">
-        <p className="text-7xl  uppercase font-medium">CI/CD & Deployment</p>
-        <div className="uppercase self-start flex gap-3 text-2xl items-center">
+      <div className="mb-10 ml-auto flex w-5/6 flex-col">
+        <p className="text-7xl  font-medium uppercase">CI/CD & Deployment</p>
+        <div className="flex items-center gap-3 self-start text-2xl uppercase">
           AWS | GitHub
         </div>
       </div>
-      <div className="flex flex-col w-5/6 mb-10 ml-auto">
-        <p className="text-7xl  uppercase font-medium">Versioning</p>
-        <div className="uppercase self-start flex gap-3 text-2xl items-center">
+      <div className="mb-10 ml-auto flex w-5/6 flex-col">
+        <p className="text-7xl  font-medium uppercase">Versioning</p>
+        <div className="flex items-center gap-3 self-start text-2xl uppercase">
           Git | Git Flow | Conventional Commits
         </div>
       </div>
-    </motion.div>
+    </RouteContainer>
   );
 }

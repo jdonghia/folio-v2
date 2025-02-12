@@ -9,7 +9,7 @@ export function Circle() {
     <motion.div
       animate={{ rotateZ: 360 }}
       transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-      className="grid place-items-center bg-black rounded-full w-[100rem] relative h-[100rem]"
+      className="relative grid size-[100rem] place-items-center rounded-full bg-black"
     >
       {circleSizes.map((size, index) => {
         const nextSize = size - 0.5; // to get the next smaller circle (like w-[99.5rem] when size is 100)
@@ -18,10 +18,10 @@ export function Circle() {
         return (
           <div
             key={size}
-            className={`bg-${isEven ? "white" : "black"} absolute grid place-items-center rounded-full w-[${size}rem] h-[${size}rem]`}
+            className={`bg-${isEven ? "white" : "black"} w-[ absolute grid place-items-center rounded-full${size}rem] h-[${size}rem]`}
           >
             <div
-              className={`bg-${isEven ? "white" : "white"} absolute grid place-items-center rounded-full w-[${nextSize}rem] h-[${nextSize}rem]`}
+              className={`bg-${isEven ? "white" : "white"} w-[ absolute grid place-items-center rounded-full${nextSize}rem] h-[${nextSize}rem]`}
             ></div>
             {[
               "bottom-0 translate-y-2",
@@ -31,9 +31,9 @@ export function Circle() {
             ].map((positionClass, posIndex) => (
               <div
                 key={posIndex}
-                className={`bg-blue-500 grid place-items-center rounded-full w-6 h-6 absolute ${positionClass}`}
+                className={`absolute grid size-6 place-items-center rounded-full bg-blue-500 ${positionClass}`}
               >
-                <div className="bg-white rounded-full w-5 h-5"></div>
+                <div className="size-5 rounded-full bg-white"></div>
               </div>
             ))}
           </div>

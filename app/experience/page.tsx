@@ -1,24 +1,20 @@
 "use client";
 
-import { motion } from "motion/react";
+import { RouteContainer } from "@/app/components/shared/route-container";
 
-export default function Home() {
+export default function Experience() {
   return (
-    <motion.div
-      className="overflow-scroll"
-      initial={{ transition: { duration: 0.4, ease: "easeInOut" }, opacity: 0 }}
-      animate={{ transition: { duration: 0.4, ease: "easeInOut" }, opacity: 1 }}
-    >
-      <div className="flex flex-col w-5/6 mt-20 ml-auto items-end">
+    <RouteContainer>
+      <div className="ml-auto mt-20 flex w-5/6 flex-col items-end">
         <div className="flex items-center">
-          <p className="text-7xl uppercase font-medium">Claro S.A</p>
-          <span className="h-px w-[35.5rem] bg-black block"></span>
+          <p className="text-7xl font-medium uppercase">Claro S.A</p>
+          <span className="block h-px w-[35.5rem] bg-black"></span>
         </div>
-        <div className="self-start flex gap-3 items-center">
+        <div className="flex items-center gap-3 self-start">
           <p>11/2024 - current</p>
           <p className="text-2xl">Rio de Janeiro, Brazil</p>
         </div>
-        <div className="text-xl w-11/12 mt-5 self-start">
+        <div className="mt-5 w-11/12 self-start text-xl">
           &nbsp;&nbsp;&nbsp;&nbsp;• Member of iMusica, part of the América Móvil
           group, working on the development of Claro Música.
           <br className="my-1" /> &nbsp;&nbsp;&nbsp;&nbsp;• Working on the
@@ -26,16 +22,16 @@ export default function Home() {
           collaboration with the team from Mexico.
         </div>
       </div>
-      <div className="flex flex-col w-5/6 mt-20 ml-auto items-end">
+      <div className="ml-auto mt-20 flex w-5/6 flex-col items-end">
         <div className="flex items-center">
-          <p className="text-7xl uppercase font-medium">JiveMauá</p>
-          <span className="h-px w-[36.5rem] bg-black block"></span>
+          <p className="text-7xl font-medium uppercase">JiveMauá</p>
+          <span className="block h-px w-[36.5rem] bg-black"></span>
         </div>
-        <div className="self-start flex gap-3 items-center">
+        <div className="flex items-center gap-3 self-start">
           <p>12/2021 - 10/2024</p>
           <p className="text-2xl">São Paulo, Brazil</p>
         </div>
-        <div className="text-xl w-11/12 mt-5 self-start">
+        <div className="mt-5 w-11/12 self-start text-xl">
           &nbsp;&nbsp;&nbsp;&nbsp;• Led the frontend development in migrating
           the stack to React.js with TypeScript, Node.js with Express,
           PostgreSQL, and AWS services (Cognito, Amplify, S3, Dynamo), resulting
@@ -69,16 +65,16 @@ export default function Home() {
           efficiency in asset and investment management.
         </div>
       </div>
-      <div className="flex flex-col w-5/6 mb-20 mt-20 ml-auto items-end">
+      <div className="my-20 ml-auto flex w-5/6 flex-col items-end">
         <div className="flex items-center">
-          <p className="text-7xl uppercase font-medium">Beijaflore</p>
-          <span className="h-px w-[32rem] bg-black block"></span>
+          <p className="text-7xl font-medium uppercase">Beijaflore</p>
+          <span className="block h-px w-[32rem] bg-black"></span>
         </div>
-        <div className="self-start flex gap-3 items-center">
+        <div className="flex items-center gap-3 self-start">
           <p>07/2021 - 11/2021</p>
           <p className="text-2xl">Rio de Janeiro, Brazil</p>
         </div>
-        <div className="text-xl w-11/12 mt-5 self-start">
+        <div className="mt-5 w-11/12 self-start text-xl">
           &nbsp;&nbsp;&nbsp;&nbsp;• Served as the lead frontend developer on the
           team responsible for the creation and maintenance of the Spazio
           project: a web application for antenna management developed for TIM
@@ -89,6 +85,6 @@ export default function Home() {
           improvements in performance and scalability.
         </div>
       </div>
-    </motion.div>
+    </RouteContainer>
   );
 }
