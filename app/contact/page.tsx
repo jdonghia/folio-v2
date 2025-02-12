@@ -37,10 +37,8 @@ export default function Home() {
 
   return (
     <motion.div
-      initial={{ transition: { duration: 2 }, opacity: 0 }}
-      exit={{ transition: { duration: 5 }, opacity: 0 }}
-      animate={{ transition: { duration: 2 }, opacity: 1 }}
-      className="bg-white flex w-3/5"
+      initial={{ transition: { duration: 0.8, ease: "easeInOut" }, opacity: 0 }}
+      animate={{ transition: { duration: 0.8, ease: "easeInOut" }, opacity: 1 }}
     >
       <div className="flex flex-col mt-80 gap-10">
         <div className="text-7xl   relative ml-auto uppercase">
