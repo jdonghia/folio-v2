@@ -8,6 +8,7 @@ import {
 } from "motion/react";
 import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 
 export default function Home() {
   const router = useRouter();
@@ -35,12 +36,33 @@ export default function Home() {
     }
   });
 
+  const { themes, setTheme } = useTheme();
   return (
     <motion.div
       className="relative"
       initial={{ transition: { duration: 0.8, ease: "easeInOut" }, opacity: 0 }}
       animate={{ transition: { duration: 0.8, ease: "easeInOut" }, opacity: 1 }}
     >
+      <button
+        className="bg-red-500"
+        onClick={() => {
+          console.log("chamei");
+          setTheme("light");
+        }}
+      >
+        dark
+      </button>
+
+      <button
+        className="bg-red-500"
+        onClick={() => {
+          console.log("chamei");
+          setTheme("dark");
+        }}
+      >
+        dark
+      </button>
+
       <div className="flex flex-col mt-80 gap-10">
         <div className="text-7xl   relative ml-auto uppercase">
           <div className="flex items-center">
