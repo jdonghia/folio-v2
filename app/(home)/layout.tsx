@@ -1,12 +1,13 @@
 "use client";
 
-import { motion, useAnimate } from "motion/react";
+import { AnimatePresence, motion, useAnimate } from "motion/react";
 import { usePathname } from "next/navigation";
 import { CircleBackground } from "@/app/components/circle-background";
 import { TransitionLink } from "@/app/components/utils/transition-link/transition-link";
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
 import { RouteContainer } from "../components/shared/route-container";
+import { Circle } from "../components/wip";
 
 export default function RootLayout({
   children,
@@ -18,15 +19,16 @@ export default function RootLayout({
   const { theme, setTheme } = useTheme();
 
   const backgroundSvg = {
-    home: <CircleBackground />,
+    "/": <CircleBackground />,
+    "/experience": <Circle />,
   };
 
   const menuItems = [
     { id: "home", path: "/", name: "Home" },
     { id: "experience", path: "/experience", name: "Experience" },
-    { id: "projects", path: "/projects", name: "Projects" },
+    // { id: "projects", path: "/projects", name: "Projects"},
     { id: "expertise", path: "/expertise", name: "Expertise" },
-    { id: "contact", path: "/contact", name: "Contact" },
+    { id: "contact", path: "/contact", name: "Contact", size: "60%" },
   ];
 
   useEffect(() => {
@@ -60,7 +62,10 @@ export default function RootLayout({
 
   return (
     <div className="fixed h-screen w-full p-5">
-      <div className="relative flex h-full border border-black" ref={scope}>
+      <div
+        className="relative flex h-full border border-black transition-colors duration-[2000ms] dark:border-white"
+        ref={scope}
+      >
         <div className="absolute right-0 z-50 m-3 flex gap-2">
           <div
             className="flex items-center gap-1"
@@ -70,7 +75,7 @@ export default function RootLayout({
             }}
           >
             <button
-            // className={`${theme === "light" ? "border-black bg-black" : ""} size-4 border border-white`}
+              className={`transition-colors duration-[2000ms] ${theme === "light" ? "border-black bg-black" : ""} size-4 border border-white`}
             ></button>
             <p>light</p>
           </div>
@@ -79,21 +84,21 @@ export default function RootLayout({
             className="flex items-center gap-1"
           >
             <button
-            // className={`${theme === "dark" ? "border-white bg-white" : ""} size-4 border border-black`}
+              className={`transition-colors duration-[2000ms] ${theme === "dark" ? "border-white bg-white" : ""} size-4 border border-black`}
             ></button>
             <p>dark</p>
           </div>
         </div>
         <motion.div
           id="menu"
-          className="flex h-full w-6/12 flex-col gap-36 overflow-hidden bg-black transition-colors duration-[2000ms] dark:bg-white"
+          className="flex h-full w-3/5 flex-col gap-36 overflow-hidden bg-black transition-colors duration-[2000ms] dark:bg-white"
         >
-          <div className="ms-20 mt-10 text-white dark:text-black">
+          <div className="ms-20 mt-10 text-white transition-colors duration-[2000ms] dark:text-black">
             <p className="text-6xl">
               <span className="font-light">João</span> Donghia
             </p>
             <div className="absolute left-0 mt-2 flex items-center gap-1">
-              <span className="block h-px w-80 bg-white"></span>
+              <span className="block h-px w-80 bg-white dark:bg-black"></span>
               <p>Frontend Engineer</p>
             </div>
           </div>
@@ -117,24 +122,25 @@ export default function RootLayout({
                       hovered: false,
                     })
                   }
-                  className={`left-0 mt-2 flex cursor-pointer items-center gap-1 transition-colors hover:text-gray-600`}
+                  className={`left-0 mt-2 flex cursor-pointer items-center gap-1 transition-colors duration-[2000ms]`}
                 >
                   <motion.span
                     id={id}
-                    className={`block h-px bg-white ${pathname == path && { width: "5rem" }}`}
+                    className={`block h-px bg-white dark:bg-black ${pathname == path && { width: "5rem" }}`}
                   ></motion.span>
-                  <p>{name}</p>
+                  <p className="transition-colors hover:text-gray-600">
+                    {name}
+                  </p>
                 </motion.li>
               </TransitionLink>
             ))}
           </ol>
           <div className="relative w-[40rem]">
-            {backgroundSvg[pathname]}
-            <CircleBackground />
+            <AnimatePresence>{backgroundSvg[pathname] || null}</AnimatePresence>
           </div>
         </motion.div>
         <div
-          id="routes"
+          // id="routes"
           className="flex w-[65%] bg-white text-black dark:text-white"
         >
           {children}

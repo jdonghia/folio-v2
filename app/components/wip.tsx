@@ -33,7 +33,7 @@ export function Circle() {
                 key={posIndex}
                 className={`absolute grid size-6 place-items-center rounded-full bg-blue-500 ${positionClass}`}
               >
-                <div className="size-5 rounded-full bg-white"></div>
+                <div className="size-5 rounded-full bg-red-500"></div>
               </div>
             ))}
           </div>

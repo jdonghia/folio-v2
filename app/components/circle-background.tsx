@@ -32,7 +32,12 @@ const CIRCLES = [
 
 export function CircleBackground() {
   return (
-    <div className="relative bottom-40 right-[10%] flex scale-150 items-center justify-center">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="relative bottom-40 right-[10%] flex scale-150 items-center justify-center"
+    >
       {CIRCLES.map(({ cx, cy, r }, index) => (
         <svg
           key={index}
@@ -61,6 +66,6 @@ export function CircleBackground() {
           />
         </svg>
       ))}
-    </div>
+    </motion.div>
   );
 }
