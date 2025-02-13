@@ -1,12 +1,12 @@
 "use client";
 
 import { motion, useAnimate } from "motion/react";
-import "./globals.css";
 import { usePathname } from "next/navigation";
 import { CircleBackground } from "@/app/components/circle-background";
 import { TransitionLink } from "@/app/components/utils/transition-link/transition-link";
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
+import { RouteContainer } from "../components/shared/route-container";
 
 export default function RootLayout({
   children,
@@ -16,6 +16,10 @@ export default function RootLayout({
   const pathname = usePathname();
   const [scope, animate] = useAnimate();
   const { theme, setTheme } = useTheme();
+
+  const backgroundSvg = {
+    home: <CircleBackground />,
+  };
 
   const menuItems = [
     { id: "home", path: "/", name: "Home" },
@@ -32,9 +36,13 @@ export default function RootLayout({
   }, [pathname]);
 
   const handleMenuRouteChangeAnimation = () => {
-    let routeMenuSize = "60%";
+    let routeMenuSize = "35%";
 
-    if (pathname === "/expertise" || pathname === "/projects")
+    if (
+      pathname === "/expertise" ||
+      pathname === "/projects" ||
+      pathname === "/"
+    )
       routeMenuSize = "60%";
 
     animate("#menu", { width: routeMenuSize }, { ease: "easeInOut", delay: 0 });
@@ -52,24 +60,35 @@ export default function RootLayout({
 
   return (
     <div className="fixed h-screen w-full p-5">
-      <button
-        className={`${theme === "light" ? "bg-black" : "bg-white"} size-4 border border-black dark:text-red-500`}
-        onClick={() => setTheme("light")}
-      >
-        light
-      </button>
-      <button
-        onClick={() => setTheme("dark")}
-        className={`${theme !== "light" ? "bg-black" : "bg-white"} size-4 border border-black`}
-      >
-        dark
-      </button>
-      <div className="flex h-full border border-black" ref={scope}>
+      <div className="relative flex h-full border border-black" ref={scope}>
+        <div className="absolute right-0 z-50 m-3 flex gap-2">
+          <div
+            className="flex items-center gap-1"
+            onClick={() => {
+              console.log("chamei");
+              setTheme("light");
+            }}
+          >
+            <button
+            // className={`${theme === "light" ? "border-black bg-black" : ""} size-4 border border-white`}
+            ></button>
+            <p>light</p>
+          </div>
+          <div
+            onClick={() => setTheme("dark")}
+            className="flex items-center gap-1"
+          >
+            <button
+            // className={`${theme === "dark" ? "border-white bg-white" : ""} size-4 border border-black`}
+            ></button>
+            <p>dark</p>
+          </div>
+        </div>
         <motion.div
           id="menu"
-          className="relative flex h-full w-6/12 flex-col gap-36 overflow-hidden bg-black"
+          className="flex h-full w-6/12 flex-col gap-36 overflow-hidden bg-black transition-colors duration-[2000ms] dark:bg-white"
         >
-          <div className="ms-20 mt-10 text-white">
+          <div className="ms-20 mt-10 text-white dark:text-black">
             <p className="text-6xl">
               <span className="font-light">João</span> Donghia
             </p>
@@ -81,7 +100,7 @@ export default function RootLayout({
 
           <ol
             ref={scope}
-            className="z-50 ms-8 text-7xl font-bold uppercase  text-white"
+            className="z-50 ms-8 text-7xl font-bold uppercase text-white dark:text-black"
           >
             {menuItems.map(({ id, path, name }) => (
               <TransitionLink key={id} href={path}>
@@ -98,7 +117,7 @@ export default function RootLayout({
                       hovered: false,
                     })
                   }
-                  className={`left-0 mt-2 flex cursor-pointer items-center gap-1 ${pathname === "/" ? "text-gray-600" : ""} transition-colors hover:text-gray-600`}
+                  className={`left-0 mt-2 flex cursor-pointer items-center gap-1 transition-colors hover:text-gray-600`}
                 >
                   <motion.span
                     id={id}
@@ -109,7 +128,10 @@ export default function RootLayout({
               </TransitionLink>
             ))}
           </ol>
-          <CircleBackground />
+          <div className="relative w-[40rem]">
+            {backgroundSvg[pathname]}
+            <CircleBackground />
+          </div>
         </motion.div>
         <div
           id="routes"

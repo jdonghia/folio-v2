@@ -55,13 +55,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      // className="transition-colors duration-[2000ms] dark:bg-black"
+      className="bg-white"
+      lang="en"
+      suppressHydrationWarning
+    >
       <body className={NeueMontreal.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
+          // disableTransitionOnChange
         >
           {children}
         </ThemeProvider>

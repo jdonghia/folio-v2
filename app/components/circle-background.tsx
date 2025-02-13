@@ -32,7 +32,7 @@ const CIRCLES = [
 
 export function CircleBackground() {
   return (
-    <div className="absolute bottom-80 right-[60%] flex scale-150 items-center justify-center">
+    <div className="relative bottom-40 right-[10%] flex scale-150 items-center justify-center">
       {CIRCLES.map(({ cx, cy, r }, index) => (
         <svg
           key={index}
