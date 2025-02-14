@@ -4,7 +4,7 @@ import { delay, motion } from "motion/react";
 
 export function RouteContainer({ children }: React.PropsWithChildren) {
   return (
-    <div className="relative w-full overflow-scroll transition-colors duration-[2000ms] dark:bg-black">
+    <div className="relative w-full overflow-scroll text-kakhi transition-colors duration-[1500ms] dark:bg-eerie">
       <div id="routes">
         <motion.div
           initial={{

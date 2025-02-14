@@ -5,13 +5,11 @@ import { RouteContainer } from "../components/shared/route-container";
 export default function Home() {
   return (
     <RouteContainer>
-      <div className="mt-80 flex flex-col gap-10 transition-colors duration-[2000ms] dark:text-white">
+      <div className="mt-80 flex flex-col gap-10 uppercase text-kakhi transition-colors duration-[1500ms]">
         <div className="relative ml-auto text-5xl uppercase">
           <div className="flex items-center">
-            <p>
-              Web <b>Development</b>
-            </p>
-            <span className="block h-px w-96 bg-black transition-colors duration-[2000ms] dark:bg-white"></span>
+            <p className="font-medium">About Me</p>
+            <span className="block h-px w-96 bg-powder transition-colors duration-[1500ms] dark:bg-powder"></span>
           </div>
         </div>
         <p className="me-10 ml-auto w-8/12 text-xl leading-7 tracking-wide">

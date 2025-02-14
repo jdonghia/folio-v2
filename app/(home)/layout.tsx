@@ -7,7 +7,8 @@ import { TransitionLink } from "@/app/components/utils/transition-link/transitio
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
 import { RouteContainer } from "../components/shared/route-container";
-import { Circle } from "../components/wip";
+import { Circle, CrystalBackground } from "../components/crystal-background";
+import { ReactBackground } from "../components/react-background";
 
 export default function RootLayout({
   children,
@@ -20,7 +21,9 @@ export default function RootLayout({
 
   const backgroundSvg = {
     "/": <CircleBackground />,
-    "/experience": <Circle />,
+    "/experience": <CrystalBackground />,
+    "/projects": <CircleBackground />,
+    "/expertise": <ReactBackground />,
   };
 
   const menuItems = [
@@ -28,7 +31,7 @@ export default function RootLayout({
     { id: "experience", path: "/experience", name: "Experience" },
     { id: "projects", path: "/projects", name: "Projects" },
     { id: "expertise", path: "/expertise", name: "Expertise" },
-    { id: "contact", path: "/contact", name: "Contact", size: "60%" },
+    { id: "contact", path: "/contact", name: "Contact" },
   ];
 
   useEffect(() => {
@@ -40,12 +43,7 @@ export default function RootLayout({
   const handleMenuRouteChangeAnimation = () => {
     let routeMenuSize = "35%";
 
-    if (
-      pathname === "/expertise" ||
-      pathname === "/projects" ||
-      pathname === "/"
-    )
-      routeMenuSize = "60%";
+    if (pathname === "/projects" || pathname === "/") routeMenuSize = "60%";
 
     animate("#menu", { width: routeMenuSize }, { ease: "easeInOut", delay: 0 });
   };
@@ -63,49 +61,48 @@ export default function RootLayout({
   return (
     <div className="fixed h-screen w-full p-5">
       <div
-        className="relative flex h-full border border-black transition-colors duration-[2000ms] dark:border-white"
+        className="relative flex h-full border border-eerie transition-colors duration-[1500ms] dark:border-powder"
         ref={scope}
       >
         <div className="absolute right-0 z-50 m-3 flex gap-2">
           <div
             className="flex items-center gap-1"
             onClick={() => {
-              console.log("chamei");
               setTheme("light");
             }}
           >
             <button
-              className={`transition-colors duration-[2000ms] ${theme === "light" ? "border-black bg-black" : ""} size-4 border border-white`}
+              className={`transition-colors duration-[1500ms] ${theme === "light" ? "border-eerie bg-black" : ""} size-4 border border-white`}
             ></button>
-            <p>light</p>
+            <p>vivace</p>
           </div>
           <div
             onClick={() => setTheme("dark")}
             className="flex items-center gap-1"
           >
             <button
-              className={`transition-colors duration-[2000ms] ${theme === "dark" ? "border-white bg-white" : ""} size-4 border border-black`}
+              className={`transition-colors duration-[1500ms] ${theme === "dark" ? "border-white bg-powder" : ""} size-4 border border-black`}
             ></button>
-            <p>dark</p>
+            <p>adagio</p>
           </div>
         </div>
         <motion.div
           id="menu"
-          className="flex h-full w-3/5 flex-col gap-36 overflow-hidden bg-black transition-colors duration-[2000ms] dark:bg-white"
+          className="flex h-full w-3/5 flex-col gap-36 overflow-hidden border border-e border-eerie bg-powder transition-colors duration-[1500ms] dark:border-powder dark:bg-eerie"
         >
-          <div className="ms-20 mt-10 text-white transition-colors duration-[2000ms] dark:text-black">
+          <div className="ms-20 mt-10 uppercase text-kakhi transition-colors duration-[1500ms]">
             <p className="text-6xl">
               <span className="font-light">João</span> Donghia
             </p>
             <div className="absolute left-0 mt-2 flex items-center gap-1">
-              <span className="block h-px w-80 bg-white dark:bg-black"></span>
+              <span className="block h-px w-[21rem] bg-kakhi dark:bg-powder"></span>
               <p>Frontend Engineer</p>
             </div>
           </div>
 
           <ol
             ref={scope}
-            className="z-50 ms-8 text-7xl font-bold uppercase text-white dark:text-black"
+            className="z-50 ms-8 text-7xl font-bold uppercase text-eerie dark:text-powder"
           >
             {menuItems.map(({ id, path, name }) => (
               <TransitionLink key={id} href={path}>
@@ -122,26 +119,28 @@ export default function RootLayout({
                       hovered: false,
                     })
                   }
-                  className={`left-0 mt-2 flex cursor-pointer items-center gap-1 transition-colors duration-[2000ms]`}
+                  className={`left-0 mt-2 flex w-fit items-center gap-1 transition-colors duration-[1500ms]`}
                 >
                   <motion.span
                     id={id}
-                    className={`block h-px bg-white dark:bg-black ${pathname == path && { width: "5rem" }}`}
+                    className={`block h-px bg-eerie dark:bg-powder ${pathname == path && { width: "5rem" }}`}
                   ></motion.span>
-                  <p className="transition-colors hover:text-gray-600">
+                  <p
+                    className={`${pathname == path && "text-kakhi"} inline-block cursor-pointer transition-colors hover:text-kakhi`}
+                  >
                     {name}
                   </p>
                 </motion.li>
               </TransitionLink>
             ))}
           </ol>
-          <div className="relative w-[40rem]">
+          <div className="w-[40rem]">
             <AnimatePresence>{backgroundSvg[pathname] || null}</AnimatePresence>
           </div>
         </motion.div>
         <div
           // id="routes"
-          className="flex w-[65%] bg-white text-black dark:text-white"
+          className="flex w-[65%] bg-powder text-eerie dark:bg-eerie dark:text-powder"
         >
           {children}
         </div>

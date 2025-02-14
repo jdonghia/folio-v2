@@ -5,27 +5,40 @@ import { RouteContainer } from "@/app/components/shared/route-container";
 export default function Experience() {
   return (
     <RouteContainer>
-      <div className="ml-auto mt-20 flex w-5/6 flex-col items-end">
+      <div className="ml-auto mt-20 flex w-5/6 flex-col items-end text-kakhi">
         <div className="flex items-center">
           <p className="text-7xl font-medium uppercase">Claro S.A</p>
-          <span className="block h-px w-[35.5rem] bg-black transition-colors duration-[2000ms] dark:bg-white"></span>
+          <span className="block h-px w-[35.5rem] bg-powder transition-colors duration-[1500ms] dark:bg-powder"></span>
         </div>
         <div className="flex items-center gap-3 self-start">
           <p>11/2024 - current</p>
           <p className="text-2xl">Rio de Janeiro, Brazil</p>
         </div>
         <div className="mt-5 w-11/12 self-start text-xl">
-          &nbsp;&nbsp;&nbsp;&nbsp;• Member of iMusica, part of the América Móvil
-          group, working on the development of <b>Claro Música</b>.
-          <br className="mb-3 mt-1" /> &nbsp;&nbsp;&nbsp;&nbsp;• Working on the
-          development team for <b>Claro Música TV</b> and{" "}
-          <b>Claro Música WEB</b> in collaboration with the team from Mexico.
+          <div className="flex items-center gap-1">
+            <span className="my-auto inline-block h-px w-16 bg-powder"></span>{" "}
+            <p>
+              Member of iMusica, part of the América Móvil group, working on the
+              development of <b>Claro Música</b>.
+            </p>
+          </div>
+          <div className="my-5">
+            <div className="flex items-center gap-1">
+              <span className="my-auto inline-block h-px w-16 bg-powder"></span>{" "}
+              <p>
+                Working on the development team for <b>Claro Música TV</b> and{" "}
+                <b>Claro Música WEB</b> in collaboration{" "}
+              </p>
+            </div>
+
+            <p>with the team from Mexico.</p>
+          </div>
         </div>
       </div>
       <div className="ml-auto mt-20 flex w-5/6 flex-col items-end">
         <div className="flex items-center">
           <p className="text-7xl font-medium uppercase">JiveMauá</p>
-          <span className="block h-px w-[36.5rem] bg-black  transition-colors duration-[2000ms] dark:bg-white"></span>
+          <span className="block h-px w-[36.5rem] bg-powder  transition-colors duration-[1500ms] dark:bg-powder"></span>
         </div>
         <div className="flex items-center gap-3 self-start">
           <p>12/2021 - 10/2024</p>
@@ -78,7 +91,7 @@ export default function Experience() {
       <div className="my-20 ml-auto flex w-5/6 flex-col items-end">
         <div className="flex items-center">
           <p className="text-7xl font-medium uppercase">Beijaflore</p>
-          <span className="block h-px w-[32rem] bg-black transition-colors duration-[2000ms] dark:bg-white"></span>
+          <span className="block h-px w-[32rem] bg-powder transition-colors duration-[1500ms] dark:bg-powder"></span>
         </div>
         <div className="flex items-center gap-3 self-start">
           <p>07/2021 - 11/2021</p>
