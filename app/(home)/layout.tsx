@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useAnimate } from "motion/react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { CircleBackground } from "@/app/components/circle-background";
 import { TransitionLink } from "@/app/components/utils/transition-link/transition-link";
 import { useEffect } from "react";
@@ -9,6 +10,7 @@ import { useTheme } from "next-themes";
 import { RouteContainer } from "../components/shared/route-container";
 import { Circle, CrystalBackground } from "../components/crystal-background";
 import { ReactBackground } from "../components/react-background";
+import textureMask from "@/app/assets/imgs/texture.png";
 
 export default function RootLayout({
   children,
@@ -64,6 +66,7 @@ export default function RootLayout({
         className="relative flex h-full border border-eerie transition-colors duration-[1500ms] dark:border-powder"
         ref={scope}
       >
+        {/* <div className="absolute z-50 size-full bg-texture"></div> */}
         <div className="absolute right-0 z-50 m-3 flex gap-2">
           <div
             className="flex items-center gap-1"
@@ -88,7 +91,7 @@ export default function RootLayout({
         </div>
         <motion.div
           id="menu"
-          className="flex h-full w-3/5 flex-col gap-36 overflow-hidden border border-e border-eerie bg-powder transition-colors duration-[1500ms] dark:border-powder dark:bg-eerie"
+          className="flex h-full w-3/5 flex-col gap-36 overflow-hidden border border-e border-eerie bg-powder bg-texture transition-colors duration-[1500ms] dark:border-powder dark:bg-eerie"
         >
           <div className="ms-20 mt-10 uppercase text-kakhi transition-colors duration-[1500ms]">
             <p className="text-6xl">
