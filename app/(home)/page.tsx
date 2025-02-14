@@ -9,7 +9,7 @@ export default function Home() {
         <div className="relative ml-auto text-5xl uppercase">
           <div className="flex items-center">
             <p className="font-medium">About Me</p>
-            <span className="block h-px w-96 bg-powder transition-colors duration-[1500ms] dark:bg-powder"></span>
+            <span className="block h-px w-96 bg-eerie transition-colors duration-[1500ms] dark:bg-powder"></span>
           </div>
         </div>
         <p className="me-10 ml-auto w-8/12 text-xl leading-7 tracking-wide">

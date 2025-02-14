@@ -26,6 +26,7 @@ export default function RootLayout({
     "/experience": <CrystalBackground />,
     "/projects": <CircleBackground />,
     "/expertise": <ReactBackground />,
+    "/contact": <CircleBackground />,
   };
 
   const menuItems = [
@@ -45,7 +46,8 @@ export default function RootLayout({
   const handleMenuRouteChangeAnimation = () => {
     let routeMenuSize = "35%";
 
-    if (pathname === "/projects" || pathname === "/") routeMenuSize = "60%";
+    if (pathname === "/projects" || pathname === "/" || pathname === "/contact")
+      routeMenuSize = "60%";
 
     animate("#menu", { width: routeMenuSize }, { ease: "easeInOut", delay: 0 });
   };
@@ -61,7 +63,7 @@ export default function RootLayout({
   };
 
   return (
-    <div className="fixed h-screen w-full p-5">
+    <div className="fixed h-screen w-full p-10">
       <div
         className="relative flex h-full border border-eerie transition-colors duration-[1500ms] dark:border-powder"
         ref={scope}
@@ -75,7 +77,7 @@ export default function RootLayout({
             }}
           >
             <button
-              className={`transition-colors duration-[1500ms] ${theme === "light" ? "border-eerie bg-black" : ""} size-4 border border-white`}
+              className={`transition-colors duration-[1500ms] ${theme === "light" ? "border-eerie bg-black" : ""} border-powde size-4 border`}
             ></button>
             <p>vivace</p>
           </div>
@@ -84,14 +86,14 @@ export default function RootLayout({
             className="flex items-center gap-1"
           >
             <button
-              className={`transition-colors duration-[1500ms] ${theme === "dark" ? "border-white bg-powder" : ""} size-4 border border-black`}
+              className={`transition-colors duration-[1500ms] ${theme === "dark" ? "border-powder bg-powder" : ""} size-4 border border-black`}
             ></button>
             <p>adagio</p>
           </div>
         </div>
         <motion.div
           id="menu"
-          className="flex h-full w-3/5 flex-col gap-36 overflow-hidden border border-e border-eerie bg-powder bg-texture transition-colors duration-[1500ms] dark:border-powder dark:bg-eerie"
+          className="flex h-full w-3/5 flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-[1500ms] dark:border-powder dark:bg-eerie"
         >
           <div className="ms-20 mt-10 uppercase text-kakhi transition-colors duration-[1500ms]">
             <p className="text-6xl">
@@ -105,7 +107,7 @@ export default function RootLayout({
 
           <ol
             ref={scope}
-            className="z-50 ms-8 text-7xl font-bold uppercase text-eerie dark:text-powder"
+            className="z-50 ms-8 text-7xl font-bold uppercase text-eerie"
           >
             {menuItems.map(({ id, path, name }) => (
               <TransitionLink key={id} href={path}>
@@ -129,7 +131,7 @@ export default function RootLayout({
                     className={`block h-px bg-eerie dark:bg-powder ${pathname == path && { width: "5rem" }}`}
                   ></motion.span>
                   <p
-                    className={`${pathname == path && "text-kakhi"} inline-block cursor-pointer transition-colors hover:text-kakhi`}
+                    className={`${pathname == path && "text-kakhi"} inline-block cursor-pointer transition-colors duration-500 hover:text-kakhi dark:text-powder dark:hover:text-kakhi`}
                   >
                     {name}
                   </p>

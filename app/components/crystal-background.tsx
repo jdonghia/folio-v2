@@ -8,7 +8,7 @@ export function CrystalBackground() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="absolute left-10 top-40 flex scale-100 items-center justify-center"
+      className="absolute left-10 top-40 flex scale-90 items-center justify-center"
     >
       <svg
         width="487"
