@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`bg-powder transition-colors duration-[1500ms] dark:bg-eerie ${NeueMontreal.className}`}
+        className={`bg-powder transition-colors duration-[1000ms] dark:bg-eerie ${NeueMontreal.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}

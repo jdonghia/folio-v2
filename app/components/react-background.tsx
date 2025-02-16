@@ -20,7 +20,7 @@ export function ReactBackground() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 0.5 }}
       exit={{ opacity: 0 }}
       className="absolute right-[80%] top-2/4"
     >

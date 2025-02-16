@@ -6,7 +6,7 @@ export function CrystalBackground() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 0.5 }}
       exit={{ opacity: 0 }}
       className="absolute left-10 top-40 flex scale-90 items-center justify-center"
     >

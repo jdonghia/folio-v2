@@ -36,7 +36,12 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
   };
 
   return (
-    <Link {...props} href={href} onClick={handleTransition}>
+    <Link
+      {...props}
+      className="block w-fit"
+      href={href}
+      onClick={handleTransition}
+    >
       {children}
     </Link>
   );

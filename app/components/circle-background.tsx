@@ -34,9 +34,9 @@ export function CircleBackground() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 0.5 }}
       exit={{ opacity: 0 }}
-      className="relative bottom-40 right-[10%] flex scale-125 items-center justify-center"
+      className="relative bottom-40 right-[10%] flex scale-150 items-center justify-center"
     >
       {CIRCLES.map(({ cx, cy, r }, index) => (
         <svg
