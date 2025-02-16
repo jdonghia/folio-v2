@@ -64,7 +64,7 @@ export default function RootLayout({
 
   return (
     <div className="relative size-full">
-      <div className="absolute left-7 top-0 z-50 m-3 flex gap-2 uppercase tracking-widest">
+      <div className="absolute left-7 top-0 z-50 m-3 flex gap-2 uppercase tracking-wider">
         <div className="flex items-center gap-1">
           <button
             onClick={() => {
@@ -106,7 +106,7 @@ export default function RootLayout({
 
             <ol
               ref={scope}
-              className="z-50 ms-8 text-6xl font-bold uppercase text-eerie"
+              className="z-50 text-6xl font-bold uppercase text-eerie"
             >
               {menuItems.map(({ id, path, name }) => (
                 <TransitionLink key={id} href={path}>

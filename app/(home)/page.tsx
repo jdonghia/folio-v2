@@ -6,14 +6,16 @@ export default function Home() {
   return (
     <RouteContainer>
       <div className="mt-80 flex flex-col gap-10 uppercase text-kakhi transition-colors duration-1000">
-        <div className="ml-auto w-9/12">
-          <div className="relative mb-10 text-6xl uppercase">
-            <div className="flex items-center">
-              <p className="w-7/12 text-6xl font-bold">About Me</p>
-              <span className="block h-px w-7/12 bg-eerie transition-colors duration-1000 dark:bg-powder"></span>
+        <div className="w-full">
+          <div className="ml-auto w-11/12">
+            <div className="relative mb-10 text-6xl uppercase">
+              <div className="flex items-center">
+                <p className="whitespace-nowrap text-6xl font-bold">About Me</p>
+                <span className="ms-10 block h-px w-full bg-eerie transition-colors duration-1000 dark:bg-powder"></span>
+              </div>
             </div>
           </div>
-          <p className="me-10 w-10/12 text-justify leading-7 tracking-wide text-eerie dark:text-powder">
+          <p className="m-auto w-9/12 text-justify leading-7 tracking-wide text-eerie dark:text-powder">
             Converting concepts to reality .Dedicated to crafting exceptional
             digital experiences. <br className="mb-3 mt-1" />
             <b>Software Engineer</b> specialized in
