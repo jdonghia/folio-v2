@@ -17,24 +17,26 @@ export default function Projects() {
       {stacks.map((stack, index) => (
         <div
           key={index}
-          className={`${index % 2 === 0 ? "ml-auto" : "mr-auto"} mb-20 mt-10 flex w-11/12 flex-col text-end`}
+          className={`${index % 2 === 0 ? "ml-auto" : "mr-auto"} mb-20 mt-10 flex w-full flex-col text-end`}
         >
-          <div className="flex items-center">
-            {index % 2 !== 0 && (
-              <span className="block h-px w-full bg-kakhi transition-colors duration-1000"></span>
-            )}
-            <p className="whitespace-nowrap text-6xl font-bold uppercase">
-              {stack.title}
-            </p>
+          <div className={`${index % 2 === 0 ? "ml-auto" : "mr-auto"} w-11/12`}>
+            <div className="flex items-center">
+              {index % 2 !== 0 && (
+                <span className="me-10 block h-px w-full bg-kakhi transition-colors duration-1000"></span>
+              )}
+              <p className="whitespace-nowrap text-6xl font-bold uppercase">
+                {stack.title}
+              </p>
 
-            {index % 2 === 0 && (
-              <span className="block h-px w-full bg-kakhi transition-colors duration-1000"></span>
-            )}
+              {index % 2 === 0 && (
+                <span className="ms-10 block h-px w-full bg-kakhi transition-colors duration-1000"></span>
+              )}
+            </div>
           </div>
           <Image
             width={0}
             height={0}
-            className="m-auto size-10/12"
+            className="m-auto mt-10 w-10/12"
             alt=""
             src={vscodeImage}
           />

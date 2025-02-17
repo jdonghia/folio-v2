@@ -15,7 +15,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <p className="m-auto w-9/12 text-justify leading-7 tracking-wide text-eerie dark:text-powder">
+          <p className="m-auto w-9/12 text-justify leading-7 tracking-wide text-eerie transition-colors duration-1000 dark:text-powder">
             Converting concepts to reality .Dedicated to crafting exceptional
             digital experiences. <br className="mb-3 mt-1" />
             <b>Software Engineer</b> specialized in
