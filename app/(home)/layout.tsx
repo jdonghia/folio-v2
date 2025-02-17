@@ -84,21 +84,21 @@ export default function RootLayout({
       </div>
       <div className="fixed h-screen w-full p-10">
         <div
-          className="relative flex h-full border border-eerie transition-colors duration-1000 dark:border-powder"
+          className="relative flex h-full border border-eerie transition-colors duration-500 dark:border-powder"
           ref={scope}
         >
           {/* <div className="absolute z-50 size-full bg-texture"></div> */}
           <motion.div
             id="menu"
-            className="flex h-full w-3/5 flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-1000 dark:border-powder dark:bg-eerie"
+            className="flex h-full w-3/5 flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie"
           >
-            <div className="mr-auto mt-10 flex w-[35rem] flex-col items-end  uppercase text-kakhi transition-colors duration-1000">
+            <div className="mr-auto mt-10 flex w-[35rem] flex-col items-end  uppercase text-kakhi transition-colors duration-500">
               <p className="ps-20 text-6xl font-bold">
                 <span className="font-medium">João</span> Donghia
               </p>
               <div className="mt-2 flex w-full items-center gap-1 text-end">
-                <span className="block h-px w-7/12  bg-kakhi transition-colors duration-1000"></span>
-                <p className="trasition-colors w-5/12 text-xl text-eerie duration-[1500ms] dark:text-powder">
+                <span className="block h-px w-7/12  bg-kakhi transition-colors duration-500"></span>
+                <p className="trasition-colors w-5/12 text-xl text-eerie duration-500 dark:text-powder">
                   Frontend Engineer
                 </p>
               </div>
@@ -123,7 +123,7 @@ export default function RootLayout({
                         hovered: false,
                       })
                     }
-                    className={`left-0 mt-2 flex w-fit items-center gap-1 transition-colors duration-1000`}
+                    className={`left-0 mt-2 flex w-fit items-center gap-1 transition-colors duration-500`}
                   >
                     <motion.span
                       id={id}
@@ -144,10 +144,7 @@ export default function RootLayout({
               </AnimatePresence>
             </div>
           </motion.div>
-          <div
-            // id="routes"
-            className="flex w-[65%] bg-powder text-eerie dark:bg-eerie dark:text-powder"
-          >
+          <div className="flex w-[65%] bg-powder text-eerie dark:bg-eerie dark:text-powder">
             {children}
           </div>
         </div>

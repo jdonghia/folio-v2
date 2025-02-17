@@ -22,14 +22,14 @@ export default function Projects() {
           <div className={`${index % 2 === 0 ? "ml-auto" : "mr-auto"} w-11/12`}>
             <div className="flex items-center">
               {index % 2 !== 0 && (
-                <span className="me-10 block h-px w-full bg-kakhi transition-colors duration-1000"></span>
+                <span className="me-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>
               )}
               <p className="whitespace-nowrap text-6xl font-bold uppercase">
                 {stack.title}
               </p>
 
               {index % 2 === 0 && (
-                <span className="ms-10 block h-px w-full bg-kakhi transition-colors duration-1000"></span>
+                <span className="ms-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>
               )}
             </div>
           </div>

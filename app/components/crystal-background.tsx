@@ -27,7 +27,7 @@ export function CrystalBackground() {
             ease: "linear",
             repeat: Infinity,
           }}
-          className="stroke-eerie dark:stroke-powder"
+          className="stroke-eerie transition-colors duration-500 dark:stroke-powder"
           strokeWidth={1}
           strokeDashoffset="800"
           strokeDasharray="500"

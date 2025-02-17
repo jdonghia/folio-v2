@@ -51,21 +51,21 @@ export default function Experience() {
               <p className="w-5/12 whitespace-nowrap text-6xl font-bold uppercase">
                 {exp.company}
               </p>
-              <span className="ms-10 block h-px w-full bg-kakhi transition-colors duration-1000"></span>
+              <span className="ms-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>
             </div>
             <div className="flex items-center gap-3 self-start text-xl">
               <p>{exp.period}</p>
-              <span className="mt-1 inline-block size-2 bg-eerie dark:bg-powder"></span>
+              <span className="mt-1 inline-block size-2 bg-eerie transition-colors duration-500 dark:bg-powder"></span>
               <p className="text-xl uppercase">{exp.location}</p>
             </div>
           </div>
-          <div className="m-auto mt-5 w-9/12 self-start text-justify uppercase text-eerie dark:text-powder">
+          <div className="m-auto mt-5 w-9/12 self-start text-justify uppercase text-eerie transition-colors duration-500 dark:text-powder">
             {exp.details.map((detail, idx) => (
               <p
                 key={idx}
                 className="my-8"
                 dangerouslySetInnerHTML={{
-                  __html: `<span class='mb-px me-2 inline-block size-2 bg-eerie dark:bg-powder'></span>${detail}`,
+                  __html: `<span class='mb-px me-2 inline-block transition-colors duration-500 size-2 bg-eerie dark:bg-powder'></span>${detail}`,
                 }}
               />
             ))}
