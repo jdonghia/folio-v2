@@ -25,7 +25,7 @@ export function ReactBackground() {
       className="absolute right-[80%] top-2/4"
     >
       <div className="relative flex h-4/5 items-center  justify-center">
-        <motion.div className=" size-20 rounded-full border border-kakhi"></motion.div>
+        <motion.div className=" size-20 rounded-full border border-eerie dark:border-powder"></motion.div>
         {elipses.map(({ id, viewBox, d }, index) => (
           <div key={index} className="absolute stroke-kakhi" id="box">
             <motion.svg width="500" height="500" viewBox={viewBox} fill="none">
@@ -40,6 +40,7 @@ export function ReactBackground() {
                   ease: "linear",
                   repeat: Infinity,
                 }}
+                className="stroke-eerie dark:stroke-powder"
                 strokeWidth={1}
                 strokeDasharray="550"
                 d={d}

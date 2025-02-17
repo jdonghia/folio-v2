@@ -27,7 +27,7 @@ export function CrystalBackground() {
             ease: "linear",
             repeat: Infinity,
           }}
-          className="stroke-kakhi"
+          className="stroke-eerie dark:stroke-powder"
           strokeWidth={1}
           strokeDashoffset="800"
           strokeDasharray="500"

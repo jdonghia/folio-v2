@@ -51,7 +51,7 @@ export function CircleBackground() {
             cx={cx}
             cy={cy}
             r={r}
-            className="stroke-kakhi"
+            className="stroke-eerie dark:stroke-powder"
             animate={{
               strokeDashoffset: [0, 800],
             }}

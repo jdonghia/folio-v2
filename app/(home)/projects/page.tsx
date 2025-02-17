@@ -7,56 +7,39 @@ import vscodeImage from "@/app/assets/imgs/vscode.png";
 import websiteImage from "@/app/assets/imgs/website.png";
 
 export default function Projects() {
+  const stacks = [
+    { title: "Motion", subtitle: "Next.js | Tailwind | Framer Motion" },
+    { title: "Folio V1", subtitle: "Next.js | Typescript | Tailwind" },
+    { title: "Pokédex", subtitle: "Next.js | React.js | Tailwind" },
+  ];
   return (
     <RouteContainer>
-      <div className="w-6/6 mb-10 ml-auto mt-20 flex flex-col items-center">
-        <div className="mb-8 flex items-center">
-          <p className="text-6xl font-bold uppercase">Motion</p>
-          <span className="block h-px w-[28rem] bg-eerie transition-colors duration-1000 dark:bg-eerie dark:bg-powder"></span>
-        </div>
+      {stacks.map((stack, index) => (
+        <div
+          key={index}
+          className={`${index % 2 === 0 ? "ml-auto" : "mr-auto"} mb-20 mt-10 flex w-11/12 flex-col text-end`}
+        >
+          <div className="flex items-center">
+            {index % 2 !== 0 && (
+              <span className="block h-px w-full bg-kakhi transition-colors duration-1000"></span>
+            )}
+            <p className="whitespace-nowrap text-6xl font-bold uppercase">
+              {stack.title}
+            </p>
 
-        <div className="h-82 m-auto w-9/12 bg-red-500">
+            {index % 2 === 0 && (
+              <span className="block h-px w-full bg-kakhi transition-colors duration-1000"></span>
+            )}
+          </div>
           <Image
             width={0}
             height={0}
-            className="size-full"
+            className="m-auto size-10/12"
             alt=""
             src={vscodeImage}
           />
         </div>
-      </div>
-      <div className="w-6/6 mb-10 ml-auto mt-20 flex flex-col items-center">
-        <div className="mb-8 flex items-center">
-          <span className="block h-px w-[28rem] bg-eerie transition-colors duration-1000 dark:bg-eerie dark:bg-powder"></span>
-          <p className="text-6xl font-bold uppercase">Folio V1</p>
-        </div>
-
-        <div className="h-82 m-auto w-9/12 bg-red-500">
-          <Image
-            width={0}
-            height={0}
-            className="size-full"
-            alt=""
-            src={websiteImage}
-          />
-        </div>
-      </div>
-      <div className="w-6/6 mb-10 ml-auto mt-20 flex flex-col items-center">
-        <div className="mb-8 flex items-center">
-          <p className="text-6xl font-bold uppercase">Pokédex</p>
-          <span className="block h-px w-[28rem] bg-eerie transition-colors duration-1000 dark:bg-eerie dark:bg-powder"></span>
-        </div>
-
-        <div className="h-82 m-auto w-9/12 bg-red-500">
-          <Image
-            width={0}
-            height={0}
-            className="size-full"
-            alt=""
-            src={pokedexImage}
-          />
-        </div>
-      </div>
+      ))}
     </RouteContainer>
   );
 }

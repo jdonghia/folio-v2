@@ -8,7 +8,7 @@ export default function Expertise() {
     { title: "Next.js", subtitle: "Fullstack | Zod | tRPC" },
     { title: "React.js", subtitle: "Redux | Zustand | React Query" },
     {
-      title: "CSS Tools",
+      title: "Styling",
       subtitle:
         "Tailwind | SASS | shadcn/ui | Radix | Bootstrap | ANT Design | Material",
     },
