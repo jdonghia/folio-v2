@@ -10,7 +10,7 @@ export default function Expertise() {
     {
       title: "Styling",
       subtitle:
-        "Tailwind | SASS | shadcn/ui | Radix | Bootstrap | ANT Design | Material",
+        "CSS | Tailwind | SASS | shadcn/ui | Radix | Bootstrap | ANT Design | Material",
     },
     { title: "Animation & Rendering", subtitle: "Three.js | Framer Motion" },
     { title: "Node.js", subtitle: "Prisma | Express | Sequelize" },
