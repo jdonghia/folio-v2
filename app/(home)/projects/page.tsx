@@ -3,7 +3,7 @@
 import { RouteContainer } from "@/app/components/shared/route-container";
 import Image from "next/image";
 import pokedexImage from "@/app/assets/imgs/pokedex.png";
-import vscodeImage from "@/app/assets/imgs/vscode.jpg";
+import vscodeImage from "@/app/assets/imgs/vscode.png";
 import websiteImage from "@/app/assets/imgs/website.png";
 import Link from "next/link";
 

@@ -2,15 +2,12 @@
 
 import { AnimatePresence, motion, useAnimate } from "motion/react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import { CircleBackground } from "@/app/components/circle-background";
 import { TransitionLink } from "@/app/components/utils/transition-link/transition-link";
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
-import { RouteContainer } from "../components/shared/route-container";
-import { Circle, CrystalBackground } from "../components/crystal-background";
+import { CrystalBackground } from "../components/crystal-background";
 import { ReactBackground } from "../components/react-background";
-import textureMask from "@/app/assets/imgs/texture.png";
 
 export default function RootLayout({
   children,
@@ -19,7 +16,7 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   const [scope, animate] = useAnimate();
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   const backgroundSvg = {
     "/": <CircleBackground />,
@@ -41,6 +38,7 @@ export default function RootLayout({
     if (pathname) {
       handleMenuRouteChangeAnimation();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const handleMenuRouteChangeAnimation = () => {
@@ -52,7 +50,13 @@ export default function RootLayout({
     animate("#menu", { width: routeMenuSize }, { ease: "easeInOut", delay: 0 });
   };
 
-  const handleMenuItemAnimation = ({ currentItem, hovered }) => {
+  const handleMenuItemAnimation = ({
+    currentItem,
+    hovered,
+  }: {
+    hovered: boolean;
+    currentItem: string;
+  }) => {
     let itemMenuSize = "0";
 
     if (hovered) {
@@ -117,7 +121,7 @@ export default function RootLayout({
               </p>
               <div className="mt-2 flex w-full items-center gap-1 text-end">
                 <span className="me-10 block h-px w-full  bg-kakhi transition-colors duration-500"></span>
-                <p className="trasition-colors w-5/12 whitespace-nowrap text-xl text-eerie duration-500 dark:text-powder max-[1536px]:text-lg">
+                <p className="w-5/12 whitespace-nowrap text-xl text-eerie transition-colors duration-500 dark:text-powder max-[1536px]:text-lg">
                   Frontend Engineer
                 </p>
               </div>
@@ -146,7 +150,7 @@ export default function RootLayout({
                   >
                     <motion.span
                       id={id}
-                      className={`me-5 block h-px bg-kakhi ${pathname == path && { width: "5rem" }}`}
+                      className={`me-5 block h-px bg-kakhi`}
                     ></motion.span>
                     <p
                       className={`inline-block cursor-pointer transition-colors duration-500 hover:text-kakhi dark:text-powder dark:hover:text-kakhi ${pathname == path && "text-kakhi dark:text-kakhi"}`}
@@ -159,7 +163,7 @@ export default function RootLayout({
             </ol>
             <div className="size-full">
               <AnimatePresence>
-                {backgroundSvg[pathname] || null}
+                {backgroundSvg[pathname as keyof typeof backgroundSvg] || null}
               </AnimatePresence>
             </div>
           </motion.div>

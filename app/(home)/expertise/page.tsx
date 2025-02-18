@@ -35,11 +35,11 @@ export default function Expertise() {
         <div key={index} className="mb-20 mt-10 flex w-11/12 flex-col text-end">
           <div className="flex items-center">
             <span className="me-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>
-            <p className="whitespace-nowrap text-6xl max-[1536px]:text-5xl font-bold uppercase">
+            <p className="whitespace-nowrap text-6xl font-bold uppercase max-[1536px]:text-5xl">
               {stack.title}
             </p>
           </div>
-          <div className="flex items-center gap-3 self-end text-xl max-[1536px]:text-lg uppercase text-eerie transition-colors duration-500 dark:text-powder">
+          <div className="flex items-center gap-3 self-end text-xl uppercase text-eerie transition-colors duration-500 dark:text-powder max-[1536px]:text-lg">
             {stack.subtitle}
           </div>
         </div>

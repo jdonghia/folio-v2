@@ -1,6 +1,6 @@
 "use client";
 
-import { delay, motion } from "motion/react";
+import { motion } from "motion/react";
 
 export function RouteContainer({ children }: React.PropsWithChildren) {
   return (

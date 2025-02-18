@@ -1,4 +1,4 @@
-import { motion, useAnimate } from "motion/react";
+import { motion } from "motion/react";
 
 const elipses = [
   {
@@ -27,7 +27,7 @@ export function ReactBackground() {
     >
       <div className="relative flex h-4/5 items-center  justify-center">
         <motion.div className="size-20 rounded-full border border-eerie transition-colors duration-500 dark:border-powder max-[1536px]:size-14"></motion.div>
-        {elipses.map(({ id, viewBox, d }, index) => (
+        {elipses.map(({ viewBox, d }, index) => (
           <div key={index} className="absolute stroke-kakhi" id="box">
             <motion.svg
               width="500"
