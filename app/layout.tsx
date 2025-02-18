@@ -1,8 +1,10 @@
-"use client";
-
 import "./globals.css";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/app/components/providers/theme-provider";
+
+export const metadata = {
+  title: "João Donghia",
+};
 
 const NeueMontreal = localFont({
   src: [
