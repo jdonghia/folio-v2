@@ -92,8 +92,8 @@ export default function RootLayout({
             id="menu"
             className="relative flex h-full w-3/5 flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie"
           >
-            <div className="mr-auto mt-10 flex w-[35rem] flex-col items-end  uppercase text-kakhi transition-colors duration-500">
-              <p className="ps-20 text-6xl font-bold">
+            <div className="mt-10 flex w-11/12 flex-col items-end  uppercase text-kakhi transition-colors duration-500">
+              <p className="text-6xl max-[1378px]:text-5xl font-bold">
                 <span className="font-medium">João</span> Donghia
               </p>
               <div className="mt-2 flex w-full items-center gap-1 text-end">
@@ -106,7 +106,7 @@ export default function RootLayout({
 
             <ol
               ref={scope}
-              className="z-50 text-6xl font-bold uppercase text-eerie"
+              className="z-50 text-6xl max-[1378px]:text-5xl font-bold uppercase text-eerie"
             >
               {menuItems.map(({ id, path, name }) => (
                 <TransitionLink key={id} href={path}>

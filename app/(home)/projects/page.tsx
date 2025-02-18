@@ -24,7 +24,7 @@ export default function Projects() {
               {index % 2 !== 0 && (
                 <span className="me-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>
               )}
-              <p className="whitespace-nowrap text-6xl font-bold uppercase">
+              <p className="whitespace-nowrap text-6xl max-[1378px]:text-5xl font-bold uppercase">
                 {stack.title}
               </p>
 

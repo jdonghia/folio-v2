@@ -48,7 +48,7 @@ export default function Experience() {
         >
           <div className="ml-auto w-11/12">
             <div className="flex w-full items-center">
-              <p className="w-5/12 whitespace-nowrap text-6xl font-bold uppercase">
+              <p className="w-5/12 whitespace-nowrap text-6xl max-[1378px]:text-5xl font-bold uppercase">
                 {exp.company}
               </p>
               <span className="ms-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>

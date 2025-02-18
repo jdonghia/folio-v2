@@ -4,7 +4,8 @@ import { RouteContainer } from "@/app/components/shared/route-container";
 
 export default function Expertise() {
   const stacks = [
-    { title: "Javascript & Typescript" },
+    { title: "Javascript" },
+    { title: "Typescript" },
     { title: "Next.js", subtitle: "SSR | tRPC | Zod" },
     {
       title: "React.js",
@@ -16,7 +17,7 @@ export default function Expertise() {
         "Tailwind | SASS | shadcn/ui | Radix | Bootstrap | ANT Design | Material",
     },
     { title: "Node.js", subtitle: "Prisma | Express | Sequelize" },
-    { title: "Animation & Rendering", subtitle: "Three.js | Framer Motion" },
+    { title: "Animation & Render", subtitle: "Three.js | Framer Motion" },
     { title: "Amazon Web Services", subtitle: "Amplify | Cognito | S3" },
     { title: "NoSQL Databases", subtitle: "Dynamo | Redis" },
     { title: "CI/CD & Deployment", subtitle: "GitHub | Vercel | Jenkins" },
@@ -34,7 +35,7 @@ export default function Expertise() {
         <div key={index} className="mb-20 mt-10 flex w-11/12 flex-col text-end">
           <div className="flex items-center">
             <span className="me-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>
-            <p className="whitespace-nowrap text-6xl font-bold uppercase">
+            <p className="whitespace-nowrap text-6xl max-[1378px]:text-5xl font-bold uppercase">
               {stack.title}
             </p>
           </div>
