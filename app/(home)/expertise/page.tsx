@@ -4,20 +4,28 @@ import { RouteContainer } from "@/app/components/shared/route-container";
 
 export default function Expertise() {
   const stacks = [
-    { title: "Javascript & Typescript", subtitle: "Eslint | Webpack | Babel" },
-    { title: "Next.js", subtitle: "Fullstack | Zod | tRPC" },
-    { title: "React.js", subtitle: "Redux | Zustand | React Query" },
+    { title: "Javascript & Typescript" },
+    { title: "Next.js", subtitle: "SSR | tRPC | Zod" },
     {
-      title: "Styling",
-      subtitle:
-        "CSS | Tailwind | SASS | shadcn/ui | Radix | Bootstrap | ANT Design | Material",
+      title: "React.js",
+      subtitle: "Redux | Zustand | React Query | React Router",
     },
-    { title: "Animation & Rendering", subtitle: "Three.js | Framer Motion" },
+    {
+      title: "CSS",
+      subtitle:
+        "Tailwind | SASS | shadcn/ui | Radix | Bootstrap | ANT Design | Material",
+    },
     { title: "Node.js", subtitle: "Prisma | Express | Sequelize" },
+    { title: "Animation & Rendering", subtitle: "Three.js | Framer Motion" },
     { title: "Amazon Web Services", subtitle: "Amplify | Cognito | S3" },
     { title: "NoSQL Databases", subtitle: "Dynamo | Redis" },
     { title: "CI/CD & Deployment", subtitle: "GitHub | Vercel | Jenkins" },
-    { title: "Workflow", subtitle: "Azure | Jira" },
+    { title: "Compilers", subtitle: "Webpack | Babel" },
+    {
+      title: "Standardization",
+      subtitle: "Eslint | Husky | Prettier | Git Flow | Conventional Commits",
+    },
+    { title: "Workflow", subtitle: "Figma | Jira" },
   ];
 
   return (

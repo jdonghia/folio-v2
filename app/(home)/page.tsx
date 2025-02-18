@@ -16,19 +16,15 @@ export default function Home() {
             </div>
           </div>
           <p className="m-auto w-9/12 text-justify leading-7 tracking-wide text-eerie transition-colors duration-500 dark:text-powder">
-            Converting concepts to reality .Dedicated to crafting exceptional
-            digital experiences. <br className="mb-3 mt-1" />
-            <b>Software Engineer</b> specialized in
-            <b> front-end</b>, focusing on web application development.
-            <br className="mb-3 mt-1" />
-            Experience in <b>consulting</b>, in the <b> asset </b>
-            and <b>investment</b> management sector, and currently in the{" "}
-            <b> streaming industry </b>
-            at Claro Brasil.
-            <br className="mb-3 mt-1" />
-            Solid foundation in modern frameworks like
-            <b> React.js</b>, <b>Next.js</b>, and supersets like{" "}
-            <b>Typescript</b>.
+            Hi, there! I'm a <b>Software Engineer</b> specialized in{" "}
+            <b>frontend </b>
+            development, crafting immersive websites with fluid motions and
+            exceptional rendering performance. <br className="mb-3 mt-1" />
+            With 4 years of experience across diverse market sectors, I leverage
+            modern frameworks like <b>Next</b> and <b>React</b> to create
+            high-performance interfaces that make an impact.{" "}
+            <br className="mb-3 mt-1" />I craft exclusive digital experiences
+            through minimalist design and cutting-edge technology.{" "}
           </p>
         </div>
       </div>

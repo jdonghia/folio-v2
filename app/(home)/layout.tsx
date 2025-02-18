@@ -90,7 +90,7 @@ export default function RootLayout({
           {/* <div className="absolute z-50 size-full bg-texture"></div> */}
           <motion.div
             id="menu"
-            className="flex h-full w-3/5 flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie"
+            className="relative flex h-full w-3/5 flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie"
           >
             <div className="mr-auto mt-10 flex w-[35rem] flex-col items-end  uppercase text-kakhi transition-colors duration-500">
               <p className="ps-20 text-6xl font-bold">
@@ -138,7 +138,7 @@ export default function RootLayout({
                 </TransitionLink>
               ))}
             </ol>
-            <div className="w-[40rem]">
+            <div className="size-full">
               <AnimatePresence>
                 {backgroundSvg[pathname] || null}
               </AnimatePresence>

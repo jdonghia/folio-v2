@@ -8,12 +8,14 @@ export function CrystalBackground() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.5 }}
       exit={{ opacity: 0 }}
-      className="absolute left-10 top-40 flex scale-90 items-center justify-center"
+      transition={{ delay: 0.2 }}
+      className="absolute inset-0 grid place-items-center"
     >
       <svg
         width="487"
         height="739"
         viewBox="0 0 487 739"
+        className="scale-90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -30,7 +32,7 @@ export function CrystalBackground() {
           className="stroke-eerie transition-colors duration-500 dark:stroke-powder"
           strokeWidth={1}
           strokeDashoffset="800"
-          strokeDasharray="500"
+          strokeDasharray="800"
         />
       </svg>
     </motion.div>

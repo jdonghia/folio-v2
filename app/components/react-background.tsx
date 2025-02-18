@@ -22,7 +22,8 @@ export function ReactBackground() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.5 }}
       exit={{ opacity: 0 }}
-      className="absolute right-[80%] top-2/4"
+      transition={{ delay: 0.2 }}
+      className="absolute inset-0 grid place-items-center"
     >
       <div className="relative flex h-4/5 items-center  justify-center">
         <motion.div className=" size-20 rounded-full border border-eerie transition-colors duration-500 dark:border-powder"></motion.div>

@@ -34,6 +34,7 @@ export function CircleBackground() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
+      transition={{ delay: 0.2 }}
       animate={{ opacity: 0.5 }}
       exit={{ opacity: 0 }}
       className="relative bottom-40 right-[10%] flex scale-150 items-center justify-center"
