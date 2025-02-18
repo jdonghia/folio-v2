@@ -17,17 +17,23 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <p className="m-auto w-9/12 text-justify leading-7 tracking-wide text-eerie transition-colors duration-500 dark:text-powder">
-            Hi, there! I&apos;m a <b>Software Engineer</b> specialized in{" "}
-            <b>frontend </b>
-            development, crafting immersive websites with fluid motions and
-            exceptional rendering performance. <br className="mb-3 mt-1" />
-            With 4 years of experience across diverse market sectors, I leverage
-            modern frameworks like <b>Next</b> and <b>React</b> to create
-            high-performance interfaces that make an impact.{" "}
-            <br className="mb-3 mt-1" />I craft exclusive digital experiences
-            through minimalist design and cutting-edge technology.{" "}
-          </p>
+          <div className="m-auto w-9/12 text-justify leading-7 tracking-wide text-eerie transition-colors duration-500 dark:text-powder">
+            <p className="mb-3 mt-1">
+              Hi, there! I&apos;m a <b>Software Engineer</b> specialized in{" "}
+              <b>frontend </b>
+              development, crafting immersive websites with fluid motions and
+              exceptional rendering performance.
+            </p>
+            <p className="mb-3 mt-1">
+              With 4 years of experience across diverse market sectors, I
+              leverage modern frameworks like <b>Next</b> and <b>React</b> to
+              create high-performance interfaces that make an impact.{" "}
+            </p>
+            <p className="mb-3 mt-1">
+              I craft exclusive digital experiences through minimalist design
+              and cutting-edge technology.{" "}
+            </p>
+          </div>
         </div>
       </div>
     </RouteContainer>

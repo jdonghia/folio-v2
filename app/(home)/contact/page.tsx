@@ -18,38 +18,42 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <p className="m-auto w-9/12 text-justify text-xl leading-7 tracking-wide text-eerie transition-colors duration-500 dark:text-powder">
-            Connect with me on
-            <Link
-              target="_blank"
-              href="https://www.linkedin.com/in/joao-donghia/"
-            >
-              <b className="underline transition-colors duration-500 hover:text-kakhi">
-                {" "}
-                Linkedin
-              </b>
-            </Link>
-            <br className="mb-3 mt-1" />
-            Check out my work on
-            <Link target="_blank" href="https://github.com/jdonghia">
-              <b className="underline transition-colors duration-500 hover:text-kakhi">
-                {" "}
-                GitHub
-              </b>
-            </Link>
-            <br className="mb-3 mt-1" />
-            Drop me a message via
-            <Link
-              target="_blank"
-              href="https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcRwQnZwvgglgSvJGtQXlfhWtXLvHPLXNZDJFhtjCnVHVGwzgCCWXNvmPpLQPXnvzWdRRzrhS"
-            >
-              <b className="underline transition-colors duration-500 hover:text-kakhi">
-                {" "}
-                Email
-              </b>
-            </Link>
-            <br className="mb-3 mt-1" />
-          </p>
+          <div className="m-auto w-9/12 text-justify text-xl leading-7 tracking-wide text-eerie transition-colors duration-500 dark:text-powder">
+            <p className="mb-3 mt-1">
+              Connect with me on
+              <Link
+                target="_blank"
+                href="https://www.linkedin.com/in/joao-donghia/"
+              >
+                <b className="underline transition-colors duration-500 hover:text-kakhi">
+                  {" "}
+                  Linkedin
+                </b>
+              </Link>
+            </p>
+            <p className="mb-3 mt-1">
+              Check out my work on
+              <Link target="_blank" href="https://github.com/jdonghia">
+                <b className="underline transition-colors duration-500 hover:text-kakhi">
+                  {" "}
+                  GitHub
+                </b>
+              </Link>
+            </p>
+
+            <p className="mb-3 mt-1">
+              Drop me a message via
+              <Link
+                target="_blank"
+                href="https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcRwQnZwvgglgSvJGtQXlfhWtXLvHPLXNZDJFhtjCnVHVGwzgCCWXNvmPpLQPXnvzWdRRzrhS"
+              >
+                <b className="underline transition-colors duration-500 hover:text-kakhi">
+                  {" "}
+                  Email
+                </b>
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </RouteContainer>
