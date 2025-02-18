@@ -153,7 +153,7 @@ export default function RootLayout({
                       className={`me-5 block h-px bg-kakhi`}
                     ></motion.span>
                     <p
-                      className={`inline-block cursor-pointer transition-colors duration-500 hover:text-kakhi dark:text-powder dark:hover:text-kakhi ${pathname == path && "text-kakhi dark:text-kakhi"}`}
+                      className={`inline-block cursor-pointer transition-colors duration-500 hover:text-kakhi  dark:hover:text-kakhi ${pathname == path ? "text-kakhi dark:text-kakhi" : "dark:text-powder"}`}
                     >
                       {name}
                     </p>
