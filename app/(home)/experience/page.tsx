@@ -61,13 +61,14 @@ export default function Experience() {
               </p>
             </div>
           </div>
-          <div className="m-auto mt-5 w-9/12 self-start text-justify uppercase text-eerie transition-colors duration-500 dark:text-powder">
+          <div className="m-auto mt-5 w-9/12 self-start text-justify uppercase text-eerie dark:text-powder">
             {exp.details.map((detail, idx) => (
               <p
                 key={idx}
+                style={{ transition: "color 150ms" }}
                 className="my-8"
                 dangerouslySetInnerHTML={{
-                  __html: `<span class='mb-px me-2 inline-block transition-colors duration-500 size-2 bg-eerie dark:bg-powder'></span>${detail}`,
+                  __html: `<span class='mb-px me-2 inline-block size-2 bg-eerie transition-colors duration-500 dark:bg-powder'></span>${detail}`,
                 }}
               />
             ))}

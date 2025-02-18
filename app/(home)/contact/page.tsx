@@ -18,14 +18,17 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <div className="m-auto w-9/12 text-justify text-xl leading-7 tracking-wide text-eerie transition-colors duration-500 dark:text-powder">
+          <div className="m-auto w-9/12 text-justify text-xl leading-7 tracking-wide text-eerie dark:text-powder">
             <p className="mb-3 mt-1">
               Connect with me on
               <Link
                 target="_blank"
                 href="https://www.linkedin.com/in/joao-donghia/"
               >
-                <b className="underline transition-colors duration-500 hover:text-kakhi">
+                <b
+                  style={{ transition: "color 150ms" }}
+                  className="underline hover:text-kakhi"
+                >
                   {" "}
                   Linkedin
                 </b>
@@ -34,7 +37,10 @@ export default function Contact() {
             <p className="mb-3 mt-1">
               Check out my work on
               <Link target="_blank" href="https://github.com/jdonghia">
-                <b className="underline transition-colors duration-500 hover:text-kakhi">
+                <b
+                  style={{ transition: "color 150ms" }}
+                  className="underline hover:text-kakhi"
+                >
                   {" "}
                   GitHub
                 </b>
@@ -47,7 +53,10 @@ export default function Contact() {
                 target="_blank"
                 href="https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcRwQnZwvgglgSvJGtQXlfhWtXLvHPLXNZDJFhtjCnVHVGwzgCCWXNvmPpLQPXnvzWdRRzrhS"
               >
-                <b className="underline transition-colors duration-500 hover:text-kakhi">
+                <b
+                  style={{ transition: "color 150ms" }}
+                  className="underline hover:text-kakhi"
+                >
                   {" "}
                   Email
                 </b>

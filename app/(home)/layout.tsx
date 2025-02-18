@@ -121,7 +121,10 @@ export default function RootLayout({
               </p>
               <div className="mt-2 flex w-full items-center gap-1 text-end">
                 <span className="me-10 block h-px w-full  bg-kakhi transition-colors duration-500"></span>
-                <p className="w-5/12 whitespace-nowrap text-xl text-eerie transition-colors duration-500 dark:text-powder max-[1536px]:text-lg">
+                <p
+                  style={{ transition: "color 150ms" }}
+                  className="w-5/12 whitespace-nowrap text-xl text-eerie dark:text-powder max-[1536px]:text-lg"
+                >
                   Frontend Engineer
                 </p>
               </div>

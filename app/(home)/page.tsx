@@ -17,7 +17,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="m-auto w-9/12 text-justify leading-7 tracking-wide text-eerie transition-colors duration-500 dark:text-powder">
+          <div
+            className="m-auto w-9/12 text-justify leading-7 tracking-wide text-eerie dark:text-powder"
+            style={{ transition: "color 150ms" }}
+          >
             <p className="mb-3 mt-1">
               Hi, there! I&apos;m a <b>Software Engineer</b> specialized in{" "}
               <b>frontend </b>

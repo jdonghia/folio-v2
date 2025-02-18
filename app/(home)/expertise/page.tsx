@@ -39,7 +39,10 @@ export default function Expertise() {
               {stack.title}
             </p>
           </div>
-          <div className="flex items-center gap-3 self-end text-xl uppercase text-eerie transition-colors duration-500 dark:text-powder max-[1536px]:text-lg">
+          <div
+            style={{ transition: "color 150ms" }}
+            className="flex items-center gap-3 self-end text-xl uppercase text-eerie  dark:text-powder max-[1536px]:text-lg"
+          >
             {stack.subtitle}
           </div>
         </div>
