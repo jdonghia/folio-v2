@@ -20,10 +20,10 @@ export default function RootLayout({
 
   const backgroundSvg = {
     "/": <CircleBackground />,
-    "/experience": <CrystalBackground />,
-    "/projects": <CircleBackground />,
-    "/expertise": <ReactBackground />,
-    "/contact": <CircleBackground />,
+    "/experience/": <CrystalBackground />,
+    "/projects/": <CircleBackground />,
+    "/expertise/": <ReactBackground />,
+    "/contact/": <CircleBackground />,
   };
 
   const menuItems = [
@@ -35,6 +35,7 @@ export default function RootLayout({
   ];
 
   useEffect(() => {
+    console.log(pathname);
     if (pathname) {
       handleMenuRouteChangeAnimation();
     }
@@ -44,7 +45,11 @@ export default function RootLayout({
   const handleMenuRouteChangeAnimation = () => {
     let routeMenuSize = "35%";
 
-    if (pathname === "/projects" || pathname === "/" || pathname === "/contact")
+    if (
+      pathname === "/projects/" ||
+      pathname === "/" ||
+      pathname === "/contact/"
+    )
       routeMenuSize = "60%";
 
     animate("#menu", { width: routeMenuSize }, { ease: "easeInOut", delay: 0 });
@@ -67,7 +72,7 @@ export default function RootLayout({
   };
 
   return (
-    <div className="z-50 size-full bg-blue-500">
+    <div className="z-50 size-full">
       <div className="absolute bottom-0 right-7 z-50 m-3 flex gap-2 text-sm uppercase">
         <div className="flex items-center gap-1">
           <p className="">João Donghia</p>
@@ -113,7 +118,7 @@ export default function RootLayout({
           {/* <div className="absolute z-50 size-full bg-texture"></div> */}
           <motion.div
             id="menu"
-            className={`relative flex h-full ${pathname == "/experience" || pathname == "/expertise" ? "w-[35%]" : "w-3/5"} flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie`}
+            className={`relative flex h-full ${pathname == "/experience/" || pathname == "/expertise/" ? "w-[35%]" : "w-3/5"} flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie`}
           >
             <div className="mt-10 flex w-11/12 flex-col items-end  uppercase text-kakhi transition-colors duration-500">
               <p className="text-6xl font-bold max-[1536px]:text-5xl">
