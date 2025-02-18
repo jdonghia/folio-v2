@@ -26,10 +26,16 @@ export function ReactBackground() {
       className="absolute inset-0 grid place-items-center"
     >
       <div className="relative flex h-4/5 items-center  justify-center">
-        <motion.div className=" size-20 rounded-full border border-eerie transition-colors duration-500 dark:border-powder"></motion.div>
+        <motion.div className="size-20 rounded-full border border-eerie transition-colors duration-500 dark:border-powder max-[1536px]:size-14"></motion.div>
         {elipses.map(({ id, viewBox, d }, index) => (
           <div key={index} className="absolute stroke-kakhi" id="box">
-            <motion.svg width="500" height="500" viewBox={viewBox} fill="none">
+            <motion.svg
+              width="500"
+              height="500"
+              className="max-[1536px]:scale-75"
+              viewBox={viewBox}
+              fill="none"
+            >
               <motion.path
                 id="elipses"
                 animate={{

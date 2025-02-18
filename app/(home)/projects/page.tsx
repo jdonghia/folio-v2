@@ -5,12 +5,28 @@ import Image from "next/image";
 import pokedexImage from "@/app/assets/imgs/pokedex.png";
 import vscodeImage from "@/app/assets/imgs/vscode.png";
 import websiteImage from "@/app/assets/imgs/website.png";
+import Link from "next/link";
 
 export default function Projects() {
   const stacks = [
-    { title: "Motion", subtitle: "Next.js | Tailwind | Framer Motion" },
-    { title: "Folio V1", subtitle: "Next.js | Typescript | Tailwind" },
-    { title: "Pokédex", subtitle: "Next.js | React.js | Tailwind" },
+    {
+      title: "Motion",
+      subtitle: "Next.js | Tailwind | Framer Motion",
+      src: vscodeImage,
+      link: "https://jdonghiacssmotion.vercel.app/",
+    },
+    {
+      title: "Folio V1",
+      subtitle: "Next.js | Typescript | Tailwind",
+      src: websiteImage,
+      link: "https://jdonghia.github.io/",
+    },
+    {
+      title: "Pokédex",
+      subtitle: "Next.js | React.js | Tailwind",
+      src: pokedexImage,
+      link: "https://jdonghiapokedex.vercel.app/",
+    },
   ];
   return (
     <RouteContainer>
@@ -24,7 +40,7 @@ export default function Projects() {
               {index % 2 !== 0 && (
                 <span className="me-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>
               )}
-              <p className="whitespace-nowrap text-6xl max-[1378px]:text-5xl font-bold uppercase">
+              <p className="whitespace-nowrap text-6xl font-bold uppercase max-[1536px]:text-5xl">
                 {stack.title}
               </p>
 
@@ -33,13 +49,15 @@ export default function Projects() {
               )}
             </div>
           </div>
-          <Image
-            width={0}
-            height={0}
-            className="m-auto mt-10 w-10/12"
-            alt=""
-            src={vscodeImage}
-          />
+          <Link href={stack.link} target="_blank">
+            <Image
+              width={0}
+              height={0}
+              className="m-auto mt-10 w-10/12"
+              alt=""
+              src={stack.src}
+            />
+          </Link>
         </div>
       ))}
     </RouteContainer>
