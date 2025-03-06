@@ -1,0 +1,7 @@
+- bug transition duration-500 nos textos
+- ajustar title joão donghia
+- ajustar imagens
+- fav.ico
+- ajustar dash array e dash offset dos backgrounds
+- responsividade tablet e celular
+- ajustar pagina contatos

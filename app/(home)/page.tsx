@@ -8,9 +8,9 @@ export default function Home() {
       <div className="mt-72 flex flex-col gap-10 uppercase text-kakhi transition-colors duration-500 max-[1536px]:mt-40">
         <div className="w-full">
           <div className="ml-auto w-11/12">
-            <div className="relative mb-10 text-6xl uppercase max-[1536px]:text-5xl">
+            <div className="relative mb-10 text-6xl max-[640px]:text-3xl uppercase max-[1536px]:text-5xl">
               <div className="flex items-center">
-                <p className="whitespace-nowrap text-6xl font-bold max-[1536px]:text-5xl">
+                <p className="whitespace-nowrap text-6xl max-[640px]:text-3xl font-bold max-[1536px]:text-5xl">
                   About Me
                 </p>
                 <span className="ms-10 block h-px w-full  bg-kakhi transition-colors duration-500"></span>

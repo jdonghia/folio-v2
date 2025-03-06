@@ -48,20 +48,20 @@ export default function Experience() {
         >
           <div className="ml-auto w-11/12">
             <div className="flex w-full items-center">
-              <p className="w-5/12 whitespace-nowrap text-6xl font-bold uppercase max-[1536px]:text-5xl">
+              <p className="w-5/12 whitespace-nowrap text-6xl font-bold uppercase max-[1536px]:text-5xl max-[640px]:text-3xl">
                 {exp.company}
               </p>
               <span className="ms-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>
             </div>
-            <div className="flex items-center gap-3 self-start text-xl max-[1536px]:text-lg">
+            <div className="max-[640px]:text-sm flex items-center gap-3 self-start text-xl max-[1536px]:text-lg">
               <p>{exp.period}</p>
               <span className="mt-1 inline-block size-2 bg-eerie transition-colors duration-500 dark:bg-powder"></span>
-              <p className="text-xl uppercase max-[1536px]:text-lg">
+              <p className="max-[640px]:text-sm text-xl uppercase max-[1536px]:text-lg">
                 {exp.location}
               </p>
             </div>
           </div>
-          <div className="m-auto mt-5 w-9/12 self-start text-justify uppercase text-eerie dark:text-powder">
+          <div className="m-auto mt-5 w-9/12 self-start text-justify uppercase text-eerie dark:text-powder max-[640px]:text-sm">
             {exp.details.map((detail, idx) => (
               <p
                 key={idx}

@@ -43,6 +43,7 @@ export default function RootLayout({
   }, [pathname]);
 
   const handleMenuRouteChangeAnimation = () => {
+    if (window.innerWidth <= 640) return;
     let routeMenuSize = "35%";
 
     if (
@@ -110,25 +111,25 @@ export default function RootLayout({
           <p>adagio</p>
         </div>
       </div>
-      <div className="fixed h-screen w-full p-10">
+      <div className="fixed h-screen w-full p-10 max-sm:p-5">
         <div
-          className="relative flex h-full border border-eerie transition-colors duration-500 dark:border-powder"
+          className="relative flex h-full border border-eerie transition-colors duration-500 dark:border-powder max-[640px]:flex-col"
           ref={scope}
         >
           {/* <div className="absolute z-50 size-full bg-texture"></div> */}
           <motion.div
             id="menu"
-            className={`relative flex h-full ${pathname == "/experience/" || pathname == "/expertise/" ? "w-[35%]" : "w-3/5"} flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie`}
+            className={`relative flex h-full max-[640px]:h-1/3 max-[640px]:w-full max-[640px]:border-b ${pathname == "/experience/" || pathname == "/expertise/" ? "w-[35%]" : "w-3/5"} flex-col gap-36 overflow-hidden border-e  border-eerie bg-powder bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie max-[640px]:gap-0`}
           >
-            <div className="mt-10 flex w-11/12 flex-col items-end  uppercase text-kakhi transition-colors duration-500">
-              <p className="text-6xl font-bold max-[1536px]:text-5xl">
+            <div className="mt-10 flex w-11/12 flex-col items-end uppercase  text-kakhi transition-colors duration-500 max-[640px]:mt-4">
+              <p className="text-6xl font-bold max-[1536px]:text-5xl max-[640px]:text-3xl">
                 <span className="font-medium">João</span> Donghia
               </p>
               <div className="mt-2 flex w-full items-center gap-1 text-end">
                 <span className="me-10 block h-px w-full  bg-kakhi transition-colors duration-500"></span>
                 <p
                   style={{ transition: "color 150ms" }}
-                  className="w-5/12 whitespace-nowrap text-xl text-eerie dark:text-powder max-[1536px]:text-lg"
+                  className="w-5/12 whitespace-nowrap text-xl text-eerie dark:text-powder max-[1536px]:text-lg max-[640px]:text-sm"
                 >
                   Frontend Engineer
                 </p>
@@ -137,7 +138,7 @@ export default function RootLayout({
 
             <ol
               ref={scope}
-              className="z-50 text-6xl font-bold uppercase text-eerie max-[1536px]:text-5xl"
+              className="z-50 text-6xl font-bold uppercase text-eerie max-[1536px]:text-5xl max-[640px]:text-3xl"
             >
               {menuItems.map(({ id, path, name }) => (
                 <TransitionLink key={id} href={path}>
@@ -154,7 +155,7 @@ export default function RootLayout({
                         hovered: false,
                       })
                     }
-                    className={`left-0 mt-2 flex w-fit items-center gap-1 transition-colors duration-500`}
+                    className={`left-0 mt-2 flex w-fit items-center gap-1 transition-colors duration-500 max-[640px]:mt-0`}
                   >
                     <motion.span
                       id={id}
@@ -175,7 +176,7 @@ export default function RootLayout({
               </AnimatePresence>
             </div>
           </motion.div>
-          <div className="flex w-[65%] bg-powder text-eerie dark:bg-eerie dark:text-powder">
+          <div className="flex w-[65%] bg-powder text-eerie dark:bg-eerie dark:text-powder max-[640px]:h-2/3 max-[640px]:w-full">
             {children}
           </div>
         </div>
