@@ -28,7 +28,7 @@ export default function Home() {
               exceptional rendering performance.
             </p>
             <p className="mb-3 mt-1">
-              With 4 years of experience across diverse market sectors, I
+              With over 4 years of experience across diverse market sectors, I
               leverage modern frameworks like <b>Next</b> and <b>React</b> to
               create high-performance interfaces that make an impact.{" "}
             </p>

@@ -6,27 +6,18 @@ export default function Expertise() {
   const stacks = [
     { title: "Javascript" },
     { title: "Typescript" },
-    { title: "Next.js", subtitle: "SSR | tRPC | Zod" },
+    { title: "Fullstack", subtitle: "Next.js" },
     {
-      title: "React.js",
-      subtitle: "Redux | Zustand | React Query | React Router",
+      title: "Frontend",
+      subtitle: "React.js",
     },
     {
-      title: "CSS",
-      subtitle:
-        "Tailwind | SASS | shadcn/ui | Radix | Bootstrap | ANT Design | Material",
+      title: "Styling",
+      subtitle: "Tailwind | Radix Primitives",
     },
-    { title: "Node.js", subtitle: "Prisma | Express | Sequelize" },
     { title: "Animation & Render", subtitle: "Three.js | Framer Motion" },
-    { title: "Amazon Web Services", subtitle: "Amplify | Cognito | S3" },
-    { title: "NoSQL Databases", subtitle: "Dynamo | Redis" },
-    { title: "CI/CD & Deployment", subtitle: "GitHub | Vercel | Jenkins" },
-    { title: "Compilers", subtitle: "Webpack | Babel" },
-    {
-      title: "Standardization",
-      subtitle: "Eslint | Husky | Prettier | Git Flow | Conventional Commits",
-    },
-    { title: "Workflow", subtitle: "Figma | Jira" },
+    { title: "CI/CD & Deployment", subtitle: "AWS | Vercel" },
+    { title: "Workflow", subtitle: "Linux | Neovim | Tmux" },
   ];
 
   return (

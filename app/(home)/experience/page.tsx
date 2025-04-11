@@ -8,8 +8,7 @@ const experiences = [
     period: "11/2024 - current",
     location: "Rio de Janeiro, Brazil",
     details: [
-      "Member of iMusica, part of the América Móvil group, working on the development of <b>Claro Música</b>.",
-      "Working on the development team for <b>Claro Música TV</b> and <b>Claro Música WEB</b> in collaboration with the team from Mexico.",
+      "Part of the Claro Música development team, working as a technical lead on the Claro Música TV project.",
     ],
   },
   {
@@ -17,14 +16,12 @@ const experiences = [
     period: "12/2021 - 10/2024",
     location: "São Paulo, Brazil",
     details: [
-      "<b>Led</b> the frontend development in migrating the stack to <b>React.js</b> with <b>TypeScript</b>, <b>Node.js</b> with <b>Express</b>, <b>PostgreSQL</b>, and <b>AWS</b> services (Cognito, Amplify, S3, Dynamo), resulting in a reduction of <b>over R$1 million</b> in user license costs on <b>ServiceNow</b>.",
-      "<b>Designed</b> and presented a proposal to restructure the MVP using <b>Next.js</b>, <b>Prisma</b>, and <b>shadcn/ui</b>, focusing on improvements in performance, scalability, and user experience.",
-      "<b>Developed</b> frontend solutions for the Background Check automation project, creating intuitive and optimized interfaces to streamline internal processes.",
-      "<b>Presented</b> improvements in versioning practices (<b>Git Flow</b> and <b>Conventional Commits</b>) and coding standards (<b>Clean Code</b> and <b>SOLID</b> principles), promoting better organization, collaboration, and quality within the development team.",
-      "<b>Developed</b> and documented embedded solutions with <b>React.js</b> integrated into <b>ServiceNow</b>, focusing on meeting business needs and improving user experience.",
-      "<b>Presented</b> boilerplate-based solutions with <b>React.js</b> to the development team on <b>ServiceNow</b>, enabling the use of <b>SPAs</b> and <b>npm</b> packages, overcoming platform limitations, and expanding development possibilities.",
-      "<b>Developed</b> a <b>frontend</b> application for external clients, featuring a modern interface and integration with the <b>ServiceNow API</b>, aimed at reducing user license costs on the platform.",
-      "<b>Worked</b> as a <b>JavaScript</b> developer to create new features on the <b>ServiceNow</b> platform, contributing to enhanced efficiency in asset and investment management.",
+      "Reduced annual costs by over R$1 million in user licenses by proposing a new front-end solution in React.js to replace ServiceNow. The success of the project led to its acquisition by Apex Group and the termination of the contract with ServiceNow. News Link",
+      "Proposed and led the main project update, presenting improvements with Next.js, Prisma, and shadcn. The solution consisted of performance improvements, encapsulation of requests through Server Side Rendering, and flexible customization.",
+      "Significantly reduced compliance service contract costs by implementing a React.js interface on AWS, integrated with third-party Restful APIs. The project automated and internalized the process.",
+      "Led and coordinated front-end applications on AWS, ensuring semantic versioning with Git Flow, acting as reviewer and approver of Pull Requests, and being responsible for deployments in the production environment.",
+      "Reduced costs with external user licenses in ServiceNow by more than 40% by implementing an independent front-end integrated via Restful API. The project initiated the process of definitively replacing the contract with ServiceNow.",
+      "Pioneered the development of React.js applications in the company, creating boilerplates integrated with ServiceNow. This initiative contributed to the strategic decision to migrate to an independent front-end solution.",
     ],
   },
   {
@@ -32,8 +29,7 @@ const experiences = [
     period: "07/2021 - 11/2021",
     location: "Rio de Janeiro, Brazil",
     details: [
-      "<b>Served</b> as the lead <b>frontend</b> developer on the team responsible for the creation and maintenance of the Spazio project: a web application for antenna management developed for TIM Brasil.",
-      "<b>Contributed</b> to the migration of a <b>Ruby</b> monolithic application to a modern architecture using <b>Vue.js</b> with <b>Bootstrap</b>, <b>Kotlin</b>, and <b>Java</b> with <b>Spring Boot</b>, resulting in significant improvements in performance and scalability.",
+      "Migrated a monolithic Ruby application by implementing a modern architecture with Vue.js and Java with Spring Boot, which strengthened the partnership with TIM Brasil and enabled the closing of new contracts with the operator.",
     ],
   },
 ];
@@ -56,9 +52,7 @@ export default function Experience() {
             <div className="flex items-center gap-3 self-start text-xl max-[1536px]:text-lg">
               <p>{exp.period}</p>
               <span className="mt-1 inline-block size-2 bg-eerie transition-colors duration-500 dark:bg-powder"></span>
-              <p className="text-xl uppercase max-[1536px]:text-lg">
-                {exp.location}
-              </p>
+              <p className="uppercase max-[1536px]:text-sm">{exp.location}</p>
             </div>
           </div>
           <div className="m-auto mt-5 w-9/12 self-start text-justify uppercase text-eerie dark:text-powder">

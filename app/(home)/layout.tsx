@@ -29,7 +29,7 @@ export default function RootLayout({
   const menuItems = [
     { id: "home", path: "/", name: "Home" },
     { id: "experience", path: "/experience/", name: "Experience" },
-    { id: "projects", path: "/projects/", name: "Projects" },
+    // { id: "projects", path: "/projects/", name: "Projects" },
     { id: "expertise", path: "/expertise/", name: "Expertise" },
     { id: "contact", path: "/contact/", name: "Contact" },
   ];
