@@ -37,7 +37,7 @@ export function CircleBackground() {
       transition={{ delay: 0.2 }}
       animate={{ opacity: 0.5 }}
       exit={{ opacity: 0 }}
-      className="relative bottom-40 right-[10%] flex scale-150 items-center justify-center max-[1536px]:scale-100"
+      className="relative bottom-40 right-[10%] flex scale-150 items-center justify-center max-2xl:scale-100 max-sm:absolute max-sm:bottom-0 max-sm:translate-y-20 max-sm:left-0 max-sm:z-10 max-sm:size-full max-sm:overflow-hidden"
     >
       {CIRCLES.map(({ cx, cy, r }, index) => (
         <svg

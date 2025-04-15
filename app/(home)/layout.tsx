@@ -1,5 +1,14 @@
 "use client";
 
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/app/components/ui/sheet";
+
 import { AnimatePresence, motion, useAnimate } from "motion/react";
 import { usePathname } from "next/navigation";
 import { CircleBackground } from "@/app/components/circle-background";
@@ -8,6 +17,7 @@ import { useEffect } from "react";
 import { useTheme } from "next-themes";
 import { CrystalBackground } from "../components/crystal-background";
 import { ReactBackground } from "../components/react-background";
+import { Menu } from "lucide-react";
 
 export default function RootLayout({
   children,
@@ -52,7 +62,7 @@ export default function RootLayout({
     )
       routeMenuSize = "60%";
 
-    animate("#menu", { width: routeMenuSize }, { ease: "easeInOut", delay: 0 });
+    // animate("#menu", { width: routeMenuSize }, { ease: "easeInOut", delay: 0 });
   };
 
   const handleMenuItemAnimation = ({
@@ -68,16 +78,17 @@ export default function RootLayout({
       itemMenuSize = "5rem";
     }
 
-    animate(`#${currentItem}`, { width: itemMenuSize });
+    // animate(`#${currentItem}`, { width: itemMenuSize });
   };
 
   return (
     <div className="z-50 size-full">
-      <div className="absolute bottom-0 right-7 z-50 m-3 flex gap-2 text-sm uppercase">
+      <div className="absolute bottom-0 right-7 z-50 m-3 flex gap-2 text-sm uppercase max-xl:text-xs">
         <div className="flex items-center gap-1">
           <p className="">João Donghia</p>
 
           <svg
+            className="max-xl:scale-75"
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -92,90 +103,144 @@ export default function RootLayout({
           </svg>
         </div>
       </div>
-      <div className="absolute left-7 top-0 z-50 m-3 flex gap-2 uppercase tracking-wider">
-        <div className="flex items-center gap-1">
-          <button
-            onClick={() => {
-              setTheme("light");
-            }}
-            className={`size-4 border border-eerie bg-black dark:border-powder`}
-          ></button>
-          <p>vivace</p>
+      {window.innerWidth >= 640 && (
+        <div className="absolute left-7 top-0 z-50 m-3 flex gap-2 uppercase tracking-wider max-sm:left-3 max-sm:m-1 max-sm:text-xs">
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => {
+                setTheme("light");
+              }}
+              className={`size-4 border border-eerie bg-black dark:border-powder`}
+            ></button>
+            <p>vivace</p>
+          </div>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => setTheme("dark")}
+              className={`size-4 border border-black dark:bg-powder`}
+            ></button>
+            <p>adagio</p>
+          </div>
         </div>
-        <div className="flex items-center gap-1">
-          <button
-            onClick={() => setTheme("dark")}
-            className={`size-4 border border-black dark:bg-powder`}
-          ></button>
-          <p>adagio</p>
-        </div>
-      </div>
-      <div className="fixed h-screen w-full p-10">
+      )}
+
+      <div className="fixed h-screen w-full p-10 max-sm:p-0">
         <div
-          className="relative flex h-full border border-eerie transition-colors duration-500 dark:border-powder"
+          className="relative flex h-full border border-eerie transition-colors duration-500 dark:border-powder max-sm:flex-col max-sm:border-none"
           ref={scope}
         >
           {/* <div className="absolute z-50 size-full bg-texture"></div> */}
           <motion.div
             id="menu"
-            className={`relative flex h-full ${pathname == "/experience/" || pathname == "/expertise/" ? "w-[35%]" : "w-3/5"} flex-col gap-36 overflow-hidden  border-e border-eerie bg-powder bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie`}
+            className={`relative flex h-full  max-sm:h-auto max-sm:w-full ${pathname == "/experience/" || pathname == "/expertise/" ? "w-[35%]" : "w-3/5"} flex-col gap-36 overflow-hidden border-eerie bg-powder  bg-texture transition-colors duration-500 dark:border-powder dark:bg-eerie max-sm:gap-0 max-sm:border-b sm:border-e`}
           >
-            <div className="mt-10 flex w-11/12 flex-col items-end  uppercase text-kakhi transition-colors duration-500">
-              <p className="text-6xl font-bold max-[1536px]:text-5xl">
+            <Sheet>
+              <SheetTrigger>
+                <Menu className="absolute m-2 size-10 cursor-pointer" />
+              </SheetTrigger>
+              <SheetContent side="left">
+                <ol
+                  ref={scope}
+                  className="z-50 text-6xl font-bold uppercase text-eerie max-2xl:text-5xl max-xl:text-[2.5rem] max-lg:text-3xl max-sm:mx-2 max-sm:mt-2  max-sm:h-full max-sm:gap-3 max-sm:overflow-x-scroll max-sm:text-lg"
+                >
+                  {menuItems.map(({ id, path, name }) => (
+                    <TransitionLink key={id} href={path}>
+                      <motion.li
+                        onHoverStart={() =>
+                          handleMenuItemAnimation({
+                            currentItem: id,
+                            hovered: true,
+                          })
+                        }
+                        onHoverEnd={() =>
+                          handleMenuItemAnimation({
+                            currentItem: id,
+                            hovered: false,
+                          })
+                        }
+                        className={`left-0 mt-2 flex w-fit items-center gap-1 transition-colors duration-500 max-sm:mt-0 max-sm:gap-0`}
+                      >
+                        <motion.span
+                          id={id}
+                          className={`me-5 block h-px bg-kakhi max-sm:hidden`}
+                        ></motion.span>
+                        <p
+                          className={`inline-block cursor-pointer transition-colors duration-500 hover:text-kakhi  dark:hover:text-kakhi ${pathname == path ? "text-kakhi dark:text-kakhi" : "dark:text-powder"}`}
+                        >
+                          {name}
+                        </p>
+                      </motion.li>
+                    </TransitionLink>
+                  ))}
+                </ol>
+              </SheetContent>
+            </Sheet>
+            <div className="mt-10 max-sm:mb-3 flex w-11/12 flex-col  items-end uppercase text-kakhi  transition-colors duration-500 max-sm:mt-4 max-sm:w-[95%]">
+              <p className="text-6xl font-bold max-2xl:text-5xl max-xl:text-[2.5rem] max-lg:text-4xl max-sm:text-3xl">
                 <span className="font-medium">João</span> Donghia
               </p>
-              <div className="mt-2 flex w-full items-center gap-1 text-end">
+              <div className="mt-2 flex w-full items-center gap-1 text-end max-sm:mt-0">
                 <span className="me-10 block h-px w-full  bg-kakhi transition-colors duration-500"></span>
                 <p
                   style={{ transition: "color 150ms" }}
-                  className="w-5/12 whitespace-nowrap text-xl text-eerie dark:text-powder max-[1536px]:text-lg"
+                  className="w-5/12 whitespace-nowrap text-xl text-eerie dark:text-powder max-2xl:text-lg max-xl:text-[1rem] max-lg:w-6/12 max-lg:text-sm max-sm:text-xs"
                 >
                   Frontend Engineer
                 </p>
               </div>
             </div>
 
-            <ol
-              ref={scope}
-              className="z-50 text-6xl font-bold uppercase text-eerie max-[1536px]:text-5xl"
-            >
-              {menuItems.map(({ id, path, name }) => (
-                <TransitionLink key={id} href={path}>
-                  <motion.li
-                    onHoverStart={() =>
-                      handleMenuItemAnimation({
-                        currentItem: id,
-                        hovered: true,
-                      })
-                    }
-                    onHoverEnd={() =>
-                      handleMenuItemAnimation({
-                        currentItem: id,
-                        hovered: false,
-                      })
-                    }
-                    className={`left-0 mt-2 flex w-fit items-center gap-1 transition-colors duration-500`}
-                  >
-                    <motion.span
-                      id={id}
-                      className={`me-5 block h-px bg-kakhi`}
-                    ></motion.span>
-                    <p
-                      className={`inline-block cursor-pointer transition-colors duration-500 hover:text-kakhi  dark:hover:text-kakhi ${pathname == path ? "text-kakhi dark:text-kakhi" : "dark:text-powder"}`}
+            {window.innerWidth > 640 && (
+              <ol
+                ref={scope}
+                className="z-50 text-6xl font-bold uppercase text-eerie max-2xl:text-5xl max-xl:text-[2.5rem] max-lg:text-3xl max-sm:mx-2 max-sm:mt-2 max-sm:flex max-sm:h-full max-sm:gap-3 max-sm:overflow-x-scroll max-sm:text-lg"
+              >
+                {menuItems.map(({ id, path, name }) => (
+                  <TransitionLink key={id} href={path}>
+                    <motion.li
+                      onHoverStart={() =>
+                        handleMenuItemAnimation({
+                          currentItem: id,
+                          hovered: true,
+                        })
+                      }
+                      onHoverEnd={() =>
+                        handleMenuItemAnimation({
+                          currentItem: id,
+                          hovered: false,
+                        })
+                      }
+                      className={`left-0 mt-2 flex w-fit items-center gap-1 transition-colors duration-500 max-sm:mt-0 max-sm:gap-0`}
                     >
-                      {name}
-                    </p>
-                  </motion.li>
-                </TransitionLink>
-              ))}
-            </ol>
-            <div className="size-full">
+                      <motion.span
+                        id={id}
+                        className={`me-5 block h-px bg-kakhi max-sm:hidden`}
+                      ></motion.span>
+                      <p
+                        className={`inline-block cursor-pointer transition-colors duration-500 hover:text-kakhi  dark:hover:text-kakhi ${pathname == path ? "text-kakhi dark:text-kakhi" : "dark:text-powder"}`}
+                      >
+                        {name}
+                      </p>
+                    </motion.li>
+                  </TransitionLink>
+                ))}
+              </ol>
+            )}
+            <div className="size-full max-sm:h-auto max-sm:w-full">
+              {window.innerWidth >= 640 && (
+                <AnimatePresence>
+                  {backgroundSvg[pathname as keyof typeof backgroundSvg] ||
+                    null}
+                </AnimatePresence>
+              )}
+            </div>
+          </motion.div>
+          <div className="flex w-[65%] bg-powder text-eerie dark:bg-eerie dark:text-powder max-sm:relative max-sm:h-5/6 max-sm:w-full">
+            {window.innerWidth < 640 && (
               <AnimatePresence>
                 {backgroundSvg[pathname as keyof typeof backgroundSvg] || null}
               </AnimatePresence>
-            </div>
-          </motion.div>
-          <div className="flex w-[65%] bg-powder text-eerie dark:bg-eerie dark:text-powder">
+            )}
             {children}
           </div>
         </div>

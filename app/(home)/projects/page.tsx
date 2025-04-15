@@ -40,7 +40,7 @@ export default function Projects() {
               {index % 2 !== 0 && (
                 <span className="me-10 block h-px w-full bg-kakhi transition-colors duration-500"></span>
               )}
-              <p className="whitespace-nowrap text-6xl font-bold uppercase max-[1536px]:text-5xl">
+              <p className="whitespace-nowrap text-6xl font-bold uppercase max-xl:text-[2.5rem] max-2xl:text-5xl max-lg:text-4xl max-lg:text-4xl">
                 {stack.title}
               </p>
 

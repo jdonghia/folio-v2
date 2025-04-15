@@ -15,7 +15,7 @@ export function CrystalBackground() {
         width="487"
         height="739"
         viewBox="0 0 487 739"
-        className="scale-90 max-[1536px]:scale-75"
+        className="scale-90 max-xl:scale-50 max-lg:absolute max-lg:top-2 max-2xl:scale-75"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
