@@ -3,9 +3,6 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/app/components/ui/sheet";
 
@@ -13,7 +10,7 @@ import { AnimatePresence, motion, useAnimate } from "motion/react";
 import { usePathname } from "next/navigation";
 import { CircleBackground } from "@/app/components/circle-background";
 import { TransitionLink } from "@/app/components/utils/transition-link/transition-link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { CrystalBackground } from "../components/crystal-background";
 import { ReactBackground } from "../components/react-background";
@@ -25,8 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const [scope, animate] = useAnimate();
+  const [scope] = useAnimate();
   const { setTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
 
   const backgroundSvg = {
     "/": <CircleBackground />,
@@ -45,6 +43,7 @@ export default function RootLayout({
   ];
 
   useEffect(() => {
+    setIsMounted(true);
     console.log(pathname);
     if (pathname) {
       handleMenuRouteChangeAnimation();
@@ -53,30 +52,27 @@ export default function RootLayout({
   }, [pathname]);
 
   const handleMenuRouteChangeAnimation = () => {
-    let routeMenuSize = "35%";
+    // let routeMenuSize = "35%";
 
-    if (
-      pathname === "/projects/" ||
-      pathname === "/" ||
-      pathname === "/contact/"
-    )
-      routeMenuSize = "60%";
+    // if (
+    //   pathname === "/projects/" ||
+    //   pathname === "/" ||
+    //   pathname === "/contact/"
+    // )
+    //   routeMenuSize = "60%";
 
     // animate("#menu", { width: routeMenuSize }, { ease: "easeInOut", delay: 0 });
   };
 
-  const handleMenuItemAnimation = ({
-    currentItem,
-    hovered,
-  }: {
+  const handleMenuItemAnimation = ({}: {
     hovered: boolean;
     currentItem: string;
   }) => {
-    let itemMenuSize = "0";
+    // let itemMenuSize = "0";
 
-    if (hovered) {
-      itemMenuSize = "5rem";
-    }
+    // if (hovered) {
+    //   itemMenuSize = "5rem";
+    // }
 
     // animate(`#${currentItem}`, { width: itemMenuSize });
   };
@@ -103,7 +99,7 @@ export default function RootLayout({
           </svg>
         </div>
       </div>
-      {window.innerWidth >= 640 && (
+      {isMounted && window.innerWidth >= 640 && (
         <div className="absolute left-7 top-0 z-50 m-3 flex gap-2 uppercase tracking-wider max-sm:left-3 max-sm:m-1 max-sm:text-xs">
           <div className="flex items-center gap-1">
             <button
@@ -190,7 +186,7 @@ export default function RootLayout({
               </div>
             </div>
 
-            {window.innerWidth > 640 && (
+            {isMounted && window.innerWidth > 640 && (
               <ol
                 ref={scope}
                 className="z-50 text-6xl font-bold uppercase text-eerie max-2xl:text-5xl max-xl:text-[2.5rem] max-lg:text-3xl max-sm:mx-2 max-sm:mt-2 max-sm:flex max-sm:h-full max-sm:gap-3 max-sm:overflow-x-scroll max-sm:text-lg"
@@ -227,7 +223,7 @@ export default function RootLayout({
               </ol>
             )}
             <div className="size-full max-sm:h-auto max-sm:w-full">
-              {window.innerWidth >= 640 && (
+              {isMounted && window.innerWidth >= 640 && (
                 <AnimatePresence>
                   {backgroundSvg[pathname as keyof typeof backgroundSvg] ||
                     null}
@@ -236,7 +232,7 @@ export default function RootLayout({
             </div>
           </motion.div>
           <div className="flex w-[65%] bg-powder text-eerie dark:bg-eerie dark:text-powder max-sm:relative max-sm:h-5/6 max-sm:w-full">
-            {window.innerWidth < 640 && (
+            {isMounted && window.innerWidth < 640 && (
               <AnimatePresence>
                 {backgroundSvg[pathname as keyof typeof backgroundSvg] || null}
               </AnimatePresence>
